@@ -1,0 +1,17 @@
+page{
+  background-color: #f8f8f8;
+}
+.banner {
+  width: 750rpx;
+  height: 340rpx;
+}
+swiper image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pinzixun {
+  width: 702rpx;
+  height: 102rpx;
+}

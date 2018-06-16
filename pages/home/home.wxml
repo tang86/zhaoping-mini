@@ -1,0 +1,36 @@
+<view class='banner'>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banners}}" wx:key='banner-key'>
+      <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
+        <image src="{{item.banner}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='pinzixun'>
+
+<image></image> <text>北京神马天行公司刚刚入驻</text>
+
+</view>
+
+<view>
+<text>新闻资讯</text>
+<text>点击查看更多 >></text>
+</view>
+
+<block >
+
+<view>
+<view>
+<text>我们为什么不要简历？</text>
+<text>很多人不明白很多公司在面试的时候为什么不要
+简历，今天我们就这个问题进行一个探讨。</text>
+<text>浏览 10w+</text>
+</view>
+<view>
+<image></image></view>
+</view>
+
+
+</block>

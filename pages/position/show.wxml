@@ -1,0 +1,37 @@
+<view>
+	<view>
+		<text>
+			车间主任
+		</text>
+		<image></image><text>北京@大举难@一个地方</text>
+
+		<view>
+			<block>
+				<text>双休</text>
+			</block>
+		</view>
+	</view>
+	<view>
+	</view>
+	
+</view>
+
+
+<view>
+	<text>职位详情</text>
+	<text>职位描述：</text>
+	<text>1.职位详情</text>
+	<text>2.职位详情</text>
+	
+</view>
+
+<view>
+	<text>福利待遇</text>
+	<text>五险一金</text>
+	<text>管吃住</text>
+</view>
+
+<view>
+	<text>某公司</text>
+	
+</view>
