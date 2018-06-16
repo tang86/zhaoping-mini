@@ -1,11 +1,20 @@
-page{
+@import "/pages/layout/style.wxss";
+page {
   background-color: #f8f8f8;
 }
+
 .banner {
   width: 750rpx;
   height: 340rpx;
+  position: relative;
 }
-swiper image{
+
+swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+
+swiper image {
   display: block;
   width: 100%;
   height: 100%;
@@ -14,4 +23,90 @@ swiper image{
 .pinzixun {
   width: 702rpx;
   height: 102rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: auto;
+  position: absolute;
+  top: 275rpx;
+  left: 24rpx;
+  padding: 16rpx 0;
+  overflow: hidden;
 }
+
+.pinzixun image {
+  display: block;
+  float: left;
+  width: 165rpx;
+  height: 70rpx;
+  line-height: 102rpx;
+  border-radius: 20rpx;
+  margin: 16rpx 5rpx;
+}
+
+.pinzixun text {
+  display: block;
+  float: left;
+  width: auto;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  margin: 16rpx 24rpx;
+}
+
+.headline {
+  margin-top: 70rpx;
+  width: 702rpx;
+  height: 87rpx;
+  line-height: 87rpx;
+  padding: 26rpx 24rpx;
+  color: #333;
+}
+
+.hit-more {
+  width: auto;
+  height: 35rpx;
+  margin-top: 5rpx;
+  font-size: 22rpx;
+  color: #999;
+}
+
+.news-block {
+  width: 100%;
+  height: 262rpx;
+  padding: auto 24rpx;
+  border-top: solid 2rpx #eee;
+
+}
+
+.news-block image {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 50rpx;
+  margin-right: 24rpx;
+}
+.news-left {
+  width: 530rpx;
+  
+  margin-left: 24rpx;
+}
+.news-title {
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  line-height: auto;
+  color: #333;
+}
+.news-content {
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  line-height: auto;
+  color: #999;
+}
+.news-hits {
+  margin-top: 30rpx;
+  font-size: 18rpx;
+  line-height: auto;
+  color: #9f9f9f;
+}
+
+

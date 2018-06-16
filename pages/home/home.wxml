@@ -1,5 +1,5 @@
 <view class='banner'>
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{banners}}" wx:key='banner-key'>
       <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
         <image src="{{item.banner}}" class="slide-image" width="355" height="150" />
@@ -10,27 +10,46 @@
 
 <view class='pinzixun'>
 
-<image></image> <text>北京神马天行公司刚刚入驻</text>
+  <image src='../../images/index/pinzixun.png'></image>
+  <text>北京神马天行公司刚刚入驻</text>
 
 </view>
 
-<view>
-<text>新闻资讯</text>
-<text>点击查看更多 >></text>
+<view class='headline'>
+  <text class='block left'>新闻资讯</text>
+  <text class='block right hit-more'>点击查看更多 >></text>
 </view>
 
-<block >
+<block>
 
-<view>
-<view>
-<text>我们为什么不要简历？</text>
-<text>很多人不明白很多公司在面试的时候为什么不要
+  <view class='news-block'>
+    <view class='news-left left'>
+      <text class='block news-title'>我们为什么不要简历？</text>
+      <text class='block news-content'>很多人不明白很多公司在面试的时候为什么不要
 简历，今天我们就这个问题进行一个探讨。</text>
-<text>浏览 10w+</text>
-</view>
-<view>
-<image></image></view>
-</view>
+      <text class='block news-hits'>浏览 10w+</text>
+    </view>
+    <view class='right news-img'>
+      <image src='../../images/index/ic_picture.png'></image>
+    </view>
+  </view>
+
+
+</block>
+
+<block>
+
+  <view class='news-block'>
+    <view class='news-left left'>
+      <text class='block news-title'>我们为什么不要简历？</text>
+      <text class='block news-content'>很多人不明白很多公司在面试的时候为什么不要
+简历，今天我们就这个问题进行一个探讨。</text>
+      <text class='block news-hits'>浏览 10w+</text>
+    </view>
+    <view class='right news-img'>
+      <image src='../../images/index/ic_picture.png'></image>
+    </view>
+  </view>
 
 
 </block>
