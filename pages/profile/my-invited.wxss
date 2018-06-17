@@ -1,1 +1,18 @@
-/* pages/profile/my-invited.wxss */
+@import "../layout/style.wxss";
+
+.invited-log {
+  height: 178rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 48rpx;
+  padding-top: 50rpx;
+}
+
+.my-invited-log {
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  background-color: #fff;
+}
+

@@ -1,2 +1,210 @@
-<!--pages/position/position.wxml-->
-<text>pages/position/position.wxml</text>
+<view class='conditions'>
+  <view class='zc'>
+    <text class='condition-text'>地区<text class='fold'>+</text></text>
+
+    <text class='separator'></text>
+    <text class='condition-text'>职位<text class='fold'>+</text></text>
+
+    <text class='separator'></text>
+    <text class='condition-text'>工资<text class='fold'>+</text></text>
+
+    <text class='separator'></text>
+    <text class='condition-text'>食宿<text class='fold'>+</text></text>
+
+  </view>
+
+
+
+</view>
+
+
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>

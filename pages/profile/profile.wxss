@@ -1,1 +1,46 @@
-/* pages/profile/profile.wxss */
+@import "../layout/style.wxss";
+.resume-block {
+  margin-top: 15rpx;
+}
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.resume-block .label {
+  font-size: 28rpx;
+}
+
+.resume-block .resume-row text.right {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.resume-block .resume-row .tap-mark {
+  display: block;
+  width: 12rpx;
+  height: 21rpx;
+  margin-top: 36rpx;
+  margin-left: 15rpx;
+}
+.resume-block .resume-row.under-line {
+  border-bottom: solid 2rpx #eee;
+}
+
+.add_experience {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+
+.submit {
+  background-color: #43aca3;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 92rpx;
+  height: 92rpx;
+}

@@ -18,13 +18,14 @@
     "pages/profile/centre",
     "pages/credit/credit",
     "pages/company/company",
+    "pages/company/join",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "#43aca3"
+    "navigationBarBackgroundColor": "#43aca3",
+    "navigationBarTitleText": "区域聘",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "selectedColor": "#43aca3",
@@ -42,7 +43,7 @@
         "selectedIconPath": "/images/index/ic_position_light.png"
       },
       {
-        "pagePath": "pages/profile/profile",
+        "pagePath": "pages/profile/centre",
         "text": "我的",
         "iconPath": "/images/index/ic_my_gray.png",
         "selectedIconPath": "/images/index/ic_my_light.png"

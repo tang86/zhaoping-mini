@@ -1,4 +1,4 @@
-// pages/home/home.js
+var app = getApp()
 Page({
 
   /**
@@ -24,8 +24,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad(e) {
+   
+    this.setData({
+      msgList: [
+        { url: "url", title: "多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
+        { url: "url", title: "悦如公寓三周年生日趴邀你免费吃喝欢唱" },
+        { url: "url", title: "你想和一群有志青年一起过生日嘛？" }]
+    });
   },
 
   /**

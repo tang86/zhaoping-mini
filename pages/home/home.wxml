@@ -11,14 +11,39 @@
 <view class='pinzixun'>
 
   <image src='../../images/index/pinzixun.png'></image>
-  <text>北京神马天行公司刚刚入驻</text>
-
+ 
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+  <block wx:for="{{msgList}}" wx:key="key">
+   <!-- <navigator url="/pages/index/index?title={{item.url}}" open-type="navigate"> -->
+    <swiper-item>
+     <view class="swiper_item">{{item.title}}</view>
+    </swiper-item>
+   <!-- </navigator> -->
+  </block>
+ </swiper>
 </view>
 
 <view class='headline'>
   <text class='block left'>新闻资讯</text>
   <text class='block right hit-more'>点击查看更多 >></text>
 </view>
+
+<block>
+
+  <view class='news-block'>
+    <view class='news-left left'>
+      <text class='block news-title'>我们为什么不要简历？</text>
+      <text class='block news-content'>很多人不明白很多公司在面试的时候为什么不要
+简历，今天我们就这个问题进行一个探讨。</text>
+      <text class='block news-hits'>浏览 10w+</text>
+    </view>
+    <view class='right news-img'>
+      <image src='../../images/index/ic_picture.png'></image>
+    </view>
+  </view>
+
+
+</block>
 
 <block>
 

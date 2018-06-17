@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "我的积分",
+  "navigationBarTextStyle": "black"
+}

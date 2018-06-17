@@ -21,13 +21,108 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 14,
+			"list": [
+				{
+					"id": -1,
+					"name": "轮播-资讯详情页",
+					"pathName": "pages/news/show",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "职位主界面",
+					"pathName": "pages/position/position",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "职位详情",
+					"pathName": "pages/position/show",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业详情",
+					"pathName": "pages/company/company",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-姓名",
+					"pathName": "pages/profile/name",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-绑定手机号",
+					"pathName": "pages/profile/bindPhone",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历",
+					"pathName": "pages/profile/profile",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-我的投递",
+					"pathName": "pages/profile/sended",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-工作经历",
+					"pathName": "pages/profile/experience",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-预览简历",
+					"pathName": "pages/profile/preview",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业入驻",
+					"pathName": "pages/company/join",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-邀请记录",
+					"pathName": "pages/profile/invited",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的简历-我的邀请",
+					"pathName": "pages/profile/my-invited",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/profile/centre",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的积分",
+					"pathName": "pages/credit/credit",
+					"query": ""
+				}
+			]
 		}
 	}
 }

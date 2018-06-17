@@ -1,1 +1,148 @@
-/* pages/position/show.wxss */
+@import "../layout/style.wxss";
+
+
+.position-block {
+  width: 100%;
+  height: 300rpx;
+  margin-top: 2rpx;
+  padding-top: 55rpx;
+  padding-bottom: 28rpx;
+  margin-bottom: 17rpx;
+  background-color: #fff;
+}
+
+
+.position-name {
+  overflow: hidden;
+  width: 400rpx;
+  height: 135rpx;
+  padding: 0 !important;
+
+}
+ .name {
+  font-size: 54rpx;
+  /* font-weight: bold; */
+  color: #000;
+  margin-bottom: 10rpx;
+
+}
+.company-district {
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.ic-map {
+  display: block;
+  width: 20rpx;
+  height: 30rpx;
+}
+.salary {
+  font-size: 30rpx;
+}
+
+.position-company {
+  padding: 0 !important;
+  height: 50rpx;
+
+}
+
+.company-name {
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.position-company .number {
+  font-size: 22rpx;
+}
+
+.keywords {
+  clear: both;
+  width: auto;
+  height: 44rpx;
+}
+
+.keywords .keyword {
+  float: left;
+  width: auto;
+  height: 44rpx;
+  background-color: #f8f8f9;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  color: #999;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 9rpx 17rpx;
+  margin-right: 24rpx;
+
+}
+
+.show-block {
+  padding-top: 30rpx;
+  padding-bottom: 28rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 17rpx;
+}
+.show-title {
+  height: 31rpx;
+
+}
+.ic-bar {
+  display: block;
+  width: 6rpx;
+  height: 28rpx;
+  float: left;
+  margin-right: 12rpx;
+}
+.show-title text {
+  display: block;
+  float: left;
+  font-size: 32rpx;
+  line-height: 31rpx;
+}
+
+.content-title {
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 60rpx;
+  margin-bottom: 45rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #666;
+}
+
+
+.show-company {
+  height: 226rpx;
+  background-color: #fff;
+}
+.show-company image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+}
+
+.show-company .left {
+  margin-top: 50rpx;
+}
+.show-company-img {
+  float: left;
+}
+.show-company-name {
+  float: left;
+}
+.show-company .left text{
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.show-company-info {
+  font-size: 28rpx !important;
+  margin-left: 0 !important;
+  margin-right: 30rpx;
+  text-align: left;
+}
+.show-company .right {
+  margin-top: 78rpx;
+  font-size: 32rpx;
+}

@@ -1,2 +1,191 @@
-<!--pages/profile/sended.wxml-->
-<text>pages/profile/sended.wxml</text>
+
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block>

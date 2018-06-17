@@ -1,1 +1,71 @@
-/* pages/profile/centre.wxss */
+@import "../layout/style.wxss";
+
+
+.show-company {
+  height: 226rpx;
+  background-color: #fff;
+  margin-top: 2rpx;
+  margin-bottom: 15rpx;
+}
+.show-company image {
+  width: 121rpx;
+  height: 121rpx;
+  border-radius: 50%;
+}
+
+.show-company .left {
+  margin-top: 50rpx;
+}
+.show-company-img {
+  float: left;
+}
+.show-company-name {
+  float: left;
+  margin-top: 18rpx;
+}
+.show-company .left text{
+  font-size: 32rpx;
+  margin-left: 30rpx;
+}
+.show-company-info {
+  font-size: 24rpx !important;
+  margin-left: 0 !important;
+  margin-right: 30rpx;
+  text-align: left;
+  color: #e64340;
+}
+.show-company .right {
+  margin-top: 78rpx;
+  font-size: 32rpx;
+}
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+
+.resume-block .resume-row .right {
+  font-size: 24rpx;
+  color: #888;
+}
+.resume-block .label {
+  font-size: 28rpx;
+  margin-left: 24rpx;
+}
+
+.resume-block .resume-row .tap-mark {
+  display: block;
+  width: 12rpx;
+  height: 21rpx;
+  margin-top: 36rpx;
+  margin-left: 15rpx;
+}
+.resume-block .resume-row .icon {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 28rpx;
+}

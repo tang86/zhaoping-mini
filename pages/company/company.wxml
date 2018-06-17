@@ -1,2 +1,193 @@
-<!--pages/company/company.wxml-->
-<text>pages/company/company.wxml</text>
+<view class='zc show-company'>
+  <view class='left'>
+
+    <view class='show-company-name'>
+      <text class='block company-name'>好一个公司呀的或</text>
+      <text class='block '><text class='show-company-info'>已上市</text>
+      <text class='show-company-info'>100~400人</text>
+      <text class='show-company-info'>医药</text></text>
+    </view>
+
+  </view>
+  <view class='right'>
+    <image class='show-company-img' src='../../images/position/ic_logo.png'></image>
+  </view>
+</view>
+
+<view class='company-block list-tab'>
+  <text class='tab active'>公司信息</text>
+  <text class='tab '>在招职位</text>
+</view>
+<!-- 公司信息 开始  -->
+<view class='zc'>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{banners}}" wx:key='banner-key'>
+        <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
+          <image src="{{item.banner}}" class="slide-image"  />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='img-number'><text>1/6</text></view>
+  <view class='profile'>
+  <text class='block profile-title'>公司简介</text>
+  <text class='block profile-content'>
+  诺基亚公司（Nokia Corporrtion,NYSE:NOK）是一家总部位于芬兰主要从事生产移动通信产品的跨国公司，自1996年以来，诺基亚一直占据市场份额第一。面对苹果公司于2007年推出的iphone和采用Google  Android的手机夹击，诺基亚连续15年的全球手机销量第一的地位在2011年第二季被苹果及三星双双超越。
+  </text>
+
+
+  </view>
+</view>
+<!--公司信息 结束  -->
+
+<!-- 在招职位 开始  -->
+<!-- <block>
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+
+  <view class='position-block zc'>
+    <view class='position-name'>
+      <text class='block left name'>车间主任</text>
+      <text class='block right salary theme-color'>5K-10K</text>
+    </view>
+
+    <view class='position-company'>
+      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block right number'>预招33人</text>
+    </view>
+
+    <view class='keywords'>
+      <block>
+        <view class='keyword'>
+          <text>3年经验</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>学历不限</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>双休</text>
+        </view>
+      </block>
+      <block>
+        <view class='keyword'>
+          <text>包吃住</text>
+        </view>
+      </block>
+    </view>
+
+  </view>
+</block> -->
+<!-- 在招职位 结束  -->

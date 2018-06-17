@@ -1,37 +1,81 @@
-<view>
-	<view>
-		<text>
-			车间主任
-		</text>
-		<image></image><text>北京@大举难@一个地方</text>
+<view class='position-block zc'>
+  <view class='position-name left'>
+    <text class='block name'>车间主任</text>
+    <image class='ic-map left' src='../../images/position/ic_map.png'></image>
+    <text class='company-district left'>北京·大兴·马驹桥</text>
+  </view>
 
-		<view>
-			<block>
-				<text>双休</text>
-			</block>
-		</view>
-	</view>
-	<view>
-	</view>
-	
+  <view class='position-company right'>
+
+    <text class='block salary theme-color'>5K-10K</text>
+    <text class='block number'>预招33人</text>
+  </view>
+
+  <view class='keywords'>
+    <block>
+      <view class='keyword'>
+        <text>3年经验</text>
+      </view>
+    </block>
+    <block>
+      <view class='keyword'>
+        <text>学历不限</text>
+      </view>
+    </block>
+    <block>
+      <view class='keyword'>
+        <text>双休</text>
+      </view>
+    </block>
+    <block>
+      <view class='keyword'>
+        <text>包吃住</text>
+      </view>
+    </block>
+  </view>
+
 </view>
 
 
-<view>
-	<text>职位详情</text>
-	<text>职位描述：</text>
-	<text>1.职位详情</text>
-	<text>2.职位详情</text>
-	
+
+<view class='zc show-block'>
+  <view class='show-title'>
+    <image class='ic-bar' src='../../images/position/ic_Verticalbar.png'></image>
+    <text class='block'>职位详情</text>
+  </view>
+
+  <text class='block content-title'>职位描述：</text>
+  <text class='content'>1.职位详情
+  2.职位详情</text>
+
 </view>
 
-<view>
-	<text>福利待遇</text>
-	<text>五险一金</text>
-	<text>管吃住</text>
+<view class='zc show-block'>
+  <view class='show-title'>
+    <image class='ic-bar' src='../../images/position/ic_Verticalbar.png'></image>
+    <text class='block'>福利待遇</text>
+  </view>
+  <text class='block content'>五险一金</text>
+  <text class='block content'>管吃住</text>
+  <text class='block content'>五险一金</text>
+
 </view>
 
-<view>
-	<text>某公司</text>
-	
+
+<view class='zc show-company'>
+  <view class='left'>
+    <image class='show-company-img' src='../../images/position/ic_logo.png'></image>
+    <view class='show-company-name'>
+    <text class='block'>好一个公司呀的或</text>
+    <text class='block '><text class='show-company-info'>已上市</text><text class='show-company-info'>100~400人</text><text class='show-company-info'>医药</text></text>
+    </view>
+    
+  </view>
+  <view class='right'>
+    <text>></text>
+  </view>
+
 </view>
+
+
+<button class='bottom-button'>立即投递简历</button>

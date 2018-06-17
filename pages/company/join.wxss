@@ -1,0 +1,37 @@
+@import "../layout/style.wxss";
+
+image {
+
+  margin: 40rpx auto;
+  display: block;
+  width: 143rpx;
+  height: 143rpx;
+}
+.join-tile {
+  display: block;
+  height: 100rpx;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.resume-block .label {
+  font-size: 28rpx;
+}
+
+.resume-block .resume-row text.right {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.ceil-line {
+  border-top: solid 2rpx #eee;
+}

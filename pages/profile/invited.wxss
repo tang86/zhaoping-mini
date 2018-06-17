@@ -1,1 +1,40 @@
-/* pages/profile/invited.wxss */
+@import "../layout/style.wxss";
+
+.invited-log {
+  height: 178rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 48rpx;
+  padding-top: 50rpx;
+}
+
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+
+.resume-block .resume-row .block {
+  text-align: center;
+  float: left;
+  width: 230rpx;
+  overflow: hidden;
+}
+.resume-block .resume-row .th {
+  font-size: 28rpx;
+
+}
+.resume-block .resume-row .td {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.ceil-line {
+  border-top: solid 2rpx #eee;
+}
+.under-line {
+  border-bottom: solid 2rpx #eee;
+}

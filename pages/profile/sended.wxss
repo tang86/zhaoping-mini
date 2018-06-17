@@ -1,1 +1,60 @@
-/* pages/profile/sended.wxss */
+@import "../layout/style.wxss";
+
+
+.position-block {
+  width: 100%;
+  height: 216rpx;
+
+  padding-top: 35rpx;
+  padding-bottom: 28rpx;
+  margin-bottom: 17rpx;
+  background-color: #fff;
+}
+.position-name {
+  overflow: hidden;
+  padding: 0 !important;
+
+
+}
+.position-name .name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.position-name .salary {
+  font-size: 30rpx;
+}
+
+.position-company {
+  padding: 0 !important;
+  height: 50rpx;
+
+}
+
+.company-name {
+  overflow: hidden;
+  font-size: 28rpx;
+}
+.position-company .number {
+  font-size: 22rpx;
+}
+
+.keywords {
+  clear: both;
+  width: auto;
+  height: 44rpx;
+}
+
+.keywords .keyword {
+  float: left;
+  width: auto;
+  height: 44rpx;
+  background-color: #f8f8f9;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  color: #999;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 9rpx 17rpx;
+  margin-right: 24rpx;
+
+}

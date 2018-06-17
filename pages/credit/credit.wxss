@@ -1,1 +1,157 @@
-/* pages/credit/credit.wxss */
+@import "../layout/style.wxss";
+.credit-head {
+  height: 162rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.helf {
+  width: 350rpx;
+  float: left;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.credit-head .name {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+}
+.credit-head .number {
+  font-size: 72.2rpx;
+  line-height: 100rpx;
+  color: #fbb213;
+}
+.card-title {
+  height: 80rpx;
+  padding: 24rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+.credit-body {
+  height: 182rpx;
+  overflow: hidden;
+  clear: both;
+  padding-top: 10rpx;
+  background-color: #fff; 
+}
+.card {
+  position: relative;
+  width: 210rpx;
+  height: 138rpx;
+  float: left;
+  margin-right: 36rpx;
+}
+.card image {
+  display: block;
+  width: 210rpx;
+  height: 138rpx;
+}
+.card-number {
+  width: 90rpx;
+  height: 30rpx;
+  font-size: 30rpx;
+  position: absolute;
+  top: 46rpx;
+  left: 64rpx;
+
+}
+.no-margin-right {
+  margin-right: 0 !important;
+}
+/* 选项卡开始  */
+.list-tab {
+  height: 83rpx;
+  background-color: #fff;
+  margin-top: 24rpx;
+}
+
+.tab {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 83rpx;
+  text-align: center;
+  border-bottom: solid #eee 2rpx;
+  font-size: 28rpx;
+  line-height: 83rpx;
+  color: #c3c3c3;
+}
+
+.tab.active {
+  border-bottom: solid #43aca3 4rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #43aca3;
+}
+/* 选项卡结束  */
+
+/* 列表 开始  */
+.resume-block {
+  margin-bottom: 120rpx;
+  overflow: hidden;
+  clear: both;
+}
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+
+.resume-block .resume-row .block {
+  text-align: center;
+  float: left;
+  width: 230rpx;
+  overflow: hidden;
+}
+.resume-block .resume-row .th {
+  font-size: 28rpx;
+
+}
+.resume-block .resume-row .td {
+  font-size: 26rpx;
+  color: #999;
+  text-align: right;
+}
+/* 列表 结束  */
+
+
+
+/* 提现列表 开始  */
+
+.resume-block .withdraw-row {
+  height: 118rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+
+.resume-block .withdraw-row .block {
+  text-align: center;
+
+  width: 230rpx;
+  overflow: hidden;
+}
+.resume-block .withdraw-row .date {
+  font-size: 28rpx;
+  text-align: left;
+
+}
+.resume-block .withdraw-row .time {
+  font-size: 22rpx;
+  color: #999;
+  text-align: left;
+}
+.resume-block .withdraw-row .cash {
+  font-size: 28rpx;
+  color: #e64340;
+  text-align: right;
+
+}
+.resume-block .withdraw-row .status {
+  font-size: 22rpx;
+  text-align: right;
+}
+/* 提现列表 结束  */

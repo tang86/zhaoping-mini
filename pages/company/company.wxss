@@ -1,1 +1,171 @@
-/* pages/company/company.wxss */
+@import "../layout/style.wxss";
+
+
+.show-company {
+  height: 226rpx;
+  background-color: #fff;
+  margin-top: 2rpx;
+}
+.show-company image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+}
+
+.show-company .left {
+  margin-top: 50rpx;
+}
+.show-company-img {
+  float: left;
+}
+.show-company-name {
+  float: left;
+
+}
+.company-name {
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 30rpx;
+}
+.show-company .left text{
+  font-size: 32rpx;
+}
+.show-company-info {
+  font-size: 28rpx !important;
+  margin-left: 0 !important;
+
+  margin-right: 30rpx;
+  text-align: left;
+  color: #666;
+}
+.show-company .right {
+  margin-top: 50rpx;
+  font-size: 32rpx;
+}
+
+
+
+.list-tab {
+  height: 83rpx;
+  background-color: #fff;
+  margin-top: 24rpx;
+}
+
+.tab {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 83rpx;
+  text-align: center;
+  border-bottom: solid #eee 2rpx;
+  font-size: 28rpx;
+  line-height: 83rpx;
+  color: #c3c3c3;
+}
+
+.tab.active {
+  border-bottom: solid #43aca3 4rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #43aca3;
+}
+.banner {
+  margin-top: 45rpx;
+  margin-bottom: 45rpx;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.img-number {
+  width: 80rpx;
+  height: 40rpx;
+  text-align: center;
+  background-color: #0c0c14;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+  position: relative;
+  bottom: 105rpx;
+  left: 610rpx;
+}
+
+swiper {
+  width: 100%;
+  height: 380rpx;
+}
+
+swiper image {
+  display: block;
+  border-radius: 10rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-title {
+  font-size: 34rpx;
+}
+
+.profile-content {
+  font-size: 28rpx;
+}
+
+.position-block {
+  width: 100%;
+  height: 234rpx;
+
+  padding-top: 35rpx;
+  padding-bottom: 28rpx;
+  margin-bottom: 17rpx;
+  background-color: #fff;
+}
+.position-name {
+  overflow: hidden;
+  padding: 0 !important;
+
+
+}
+.position-name .name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.position-name .salary {
+  font-size: 30rpx;
+}
+
+.position-company {
+  padding: 0 !important;
+  height: 50rpx;
+
+}
+
+.position-block .company-name {
+  overflow: hidden;
+  font-size: 28rpx;
+  font-weight: normal;
+}
+.position-company .number {
+  font-size: 22rpx;
+}
+
+.keywords {
+  clear: both;
+  width: auto;
+  height: 44rpx;
+}
+
+.keywords .keyword {
+  float: left;
+  width: auto;
+  height: 44rpx;
+  background-color: #f8f8f9;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  color: #999;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 9rpx 17rpx;
+  margin-right: 24rpx;
+
+}

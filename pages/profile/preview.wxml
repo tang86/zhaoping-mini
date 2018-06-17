@@ -1,2 +1,30 @@
-<!--pages/profile/preview.wxml-->
-<text>pages/profile/preview.wxml</text>
+<view class='zc show-company'>
+  <view class='left'>
+
+    <view class='show-company-name'>
+      <text class='block company-name'>张三</text>
+      <text class='block '><text class='show-company-info'>23/男/3年经验/离职/北京</text>
+      </text>
+    </view>
+
+  </view>
+  <view class='right'>
+    <image class='show-company-img' src='../../images/wode/ic_head.png'></image>
+  </view>
+</view>
+
+<view class='resume-block'>
+  
+  <view class='resume-row ceil-line'>
+    <text class='block left label'>手机号</text>
+    <text class='block right'>15010946994</text>
+  </view>
+  <view class='resume-row ceil-line'>
+    <text class='block left label'>求职意向</text>
+    <text class='block right'>不限</text>
+  </view>
+</view>
+
+<view class='no-experience'>
+<text>该用户没有添加工作经验</text>
+</view>

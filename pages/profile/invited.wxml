@@ -1,2 +1,23 @@
-<!--pages/profile/invited.wxml-->
-<text>pages/profile/invited.wxml</text>
+<view class='invited-log'>
+<text class='block'>累计邀请12个好友，10个好友完善了简历，获得了
+500积分</text>
+</view>
+
+<view class='resume-block'>
+  
+  <view class='resume-row ceil-line'>
+    <text class='block th'>好友昵称</text>
+    <text class='block th'>积分</text>
+    <text class='block th'>状态</text>
+  </view>
+  <view class='resume-row ceil-line'>
+    <text class='block td'>花街的猫</text>
+    <text class='block td'>+50积分</text>
+    <text class='block td'>已完善简历</text>
+  </view>
+     <view class='resume-row ceil-line under-line'>
+    <text class='block td'>花街的猫</text>
+    <text class='block td'>+50积分</text>
+    <text class='block td'>已完善简历</text>
+  </view>
+</view>

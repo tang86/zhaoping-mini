@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "职位搜索",
+  "navigationBarTextStyle": "black"
+}

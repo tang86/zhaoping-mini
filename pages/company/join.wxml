@@ -1,0 +1,20 @@
+<view>
+<image src='../../images/logo.png'></image>
+<text class='join-tile'>企业入驻，请选择以下联系方式</text>
+</view>
+
+<view class='resume-block'>
+  
+  <view class='resume-row'>
+    <text class='block left label'>商务电话</text>
+    <text class='block right'>15010946994</text>
+  </view>
+  <view class='resume-row ceil-line'>
+    <text class='block left label'>微信</text>
+    <text class='block right'>zc003550</text>
+  </view>
+    <view class='resume-row ceil-line'>
+    <text class='block left label'>QQ</text>
+    <text class='block right'>80330582</text>
+  </view>
+</view>

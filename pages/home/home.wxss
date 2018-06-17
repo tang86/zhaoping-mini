@@ -4,8 +4,8 @@ page {
 }
 
 .banner {
-  width: 750rpx;
-  height: 340rpx;
+  width: 100%;
+  height: auto;
   position: relative;
 }
 
@@ -110,3 +110,18 @@ swiper image {
 }
 
 
+.swiper_container {
+ height: 70rpx;
+ width: 60vw;
+ float: left;
+ margin: 16rpx 24rpx;
+}
+ 
+.swiper_item {
+ font-size: 26rpx;
+ line-height: 70rpx;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ letter-spacing: 2px;
+}

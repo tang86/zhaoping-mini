@@ -1,24 +1,11 @@
-// pages/company/company.js
+// pages/company/join.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    indicatorDots: false,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    banners: [
-      {
-        id: 1,
-        banner: "../../images/index/banner.png",
-      },
-      {
-        id: 2,
-        banner: "../../images/index/banner-002.png",
-      }
-    ],
+  
   },
 
   /**

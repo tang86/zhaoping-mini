@@ -1,2 +1,13 @@
-<!--pages/profile/bindPhone.wxml-->
-<text>pages/profile/bindPhone.wxml</text>
+
+  <form bindsubmit="formSubmit">
+<view class='input'>
+<input id="mobile" name="mobile" class="login-input" type="text" placeholder="请输入手机号" />
+</view>
+   <view class='last-input'>
+<input id="code" name="code" class="login-input" type="text" placeholder="请输入验证码" />
+<text class='send-seconds'>120秒后重新发送</text>
+</view> 
+    <view class='zc'>
+    <button class="submit" formType="submit">绑定</button>
+    </view>
+  </form>

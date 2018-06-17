@@ -1,1 +1,74 @@
-/* pages/profile/preview.wxss */
+@import "../layout/style.wxss";
+
+
+.show-company {
+  height: 226rpx;
+  background-color: #fff;
+  margin-top: 2rpx;
+}
+.show-company image {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+}
+
+.show-company .left {
+  margin-top: 50rpx;
+}
+.show-company-img {
+  float: left;
+}
+.show-company-name {
+  float: left;
+
+}
+.company-name {
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 30rpx;
+}
+.show-company .left text{
+  font-size: 32rpx;
+}
+.show-company-info {
+  font-size: 28rpx !important;
+  margin-left: 0 !important;
+
+  margin-right: 30rpx;
+  text-align: left;
+  color: #666;
+}
+.show-company .right {
+  margin-top: 50rpx;
+  font-size: 32rpx;
+}
+
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.resume-block .label {
+  font-size: 28rpx;
+}
+
+.resume-block .resume-row text.right {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.ceil-line {
+  border-top: solid 2rpx #eee;
+}
+
+.no-experience {
+  margin-top: 130rpx;
+  width: 100%;
+  font-size: 28rpx;
+  color: #888;
+  text-align: center;
+}

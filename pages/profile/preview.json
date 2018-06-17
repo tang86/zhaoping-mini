@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "预览简历",
+  "navigationBarTextStyle": "black"
+}
