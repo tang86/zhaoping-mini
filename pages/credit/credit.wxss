@@ -3,12 +3,18 @@
   height: 162rpx;
   padding: 0 24rpx;
   box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+.upright {
+  width: 2rpx;
+  height: 82rpx;
+  background-color: #ccc;
+  margin-top: 50rpx;
 }
 .helf {
   width: 350rpx;
   float: left;
   text-align: center;
-  margin-bottom: 30rpx;
 }
 .credit-head .name {
   margin-top: 30rpx;

@@ -72,7 +72,7 @@
     
   </view>
   <view class='right'>
-    <text>></text>
+    <image class='tap-mark' src='../../images/wode/tap_me.png'></image>
   </view>
 
 </view>

@@ -3,6 +3,7 @@
     <text class='block name'>我的积分</text>
     <text class='block number'>900</text>
   </view>
+  <view class='upright left'></view>
   <view class='helf'>
     <text class='block name'>可兑换现金</text>
     <text class='block number'>￥90</text>
