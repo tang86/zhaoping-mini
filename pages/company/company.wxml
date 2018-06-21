@@ -15,8 +15,8 @@
 </view>
 
 <view class='company-block list-tab'>
-  <text class='tab active'>公司信息</text>
-  <text class='tab '>在招职位</text>
+  <text class='tab {{ activeInfo }}' bindtap='activeInfo'>公司信息</text>
+  <text class='tab {{ activePosition }}' bindtap='activePosition'>在招职位</text>
 </view>
 <!-- 公司信息 开始  -->
 <view class='zc'>
