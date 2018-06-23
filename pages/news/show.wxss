@@ -7,7 +7,6 @@ page{
 .show-title {
   height: 85rpx;
   margin-top: 48rpx;
-  
   font-size: 42rpx;
   /* font-weight: bold; */
   color: #333;
@@ -18,6 +17,12 @@ page{
   font-size: 26rpx;
   color: #999;
 }
+.news-author {
+  margin-right: 20rpx;
+}
+.news-date {
+  margin-left: 30rpx;
+}
 
 .show-content {
   margin-bottom: 70rpx;
@@ -26,11 +31,12 @@ page{
   margin-top: 30rpx;
   display: block;
   width: 100%;
+  height: 285rpx;
 }
 
 .show-content text {
   text-align: left;
-  text-indent: 60rpx;
+  /* text-indent: 60rpx; */
   line-height: 36rpx;
   margin-top: 30rpx;
   display: block;

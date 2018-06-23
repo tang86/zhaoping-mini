@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -30,13 +30,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home/home",
+					"query": ""
+				},
+				{
+					"id": 0,
 					"name": "轮播-资讯详情页",
 					"pathName": "pages/news/show",
-					"query": ""
+					"query": "guid=1"
 				},
 				{
 					"id": -1,
