@@ -26,7 +26,7 @@ Page({
       success(res) {
         res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
         This.setData(res.data.data);
-      
+
       }
     });
   },

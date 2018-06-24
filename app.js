@@ -89,5 +89,13 @@ App({
       url: host + '/news/',
       method: 'get'
     },
+    getPositions: {
+      url: host + '/positions',
+      method: 'get'
+    },
+    getOnePosition: {
+      url: host + '/position/',
+      method: 'get'
+    },
   }
 })

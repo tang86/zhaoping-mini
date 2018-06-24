@@ -19,7 +19,7 @@
   <text class='tab {{ activePosition }}' bindtap='activePosition'>在招职位</text>
 </view>
 <!-- 公司信息 开始  -->
-<view class='zc'>
+<view class='zc' wx:if="{{ isShowInfo }}">
   <view class='banner'>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for="{{banners}}" wx:key='banner-key'>
@@ -42,8 +42,8 @@
 <!--公司信息 结束  -->
 
 <!-- 在招职位 开始  -->
-<!-- <block>
-  <view class='position-block zc'>
+ <block>
+  <view class='position-block zc'  wx:if="{{ isShowPosition }}">
     <view class='position-name'>
       <text class='block left name'>车间主任</text>
       <text class='block right salary theme-color'>5K-10K</text>
@@ -80,7 +80,7 @@
   </view>
 
 
-  <view class='position-block zc'>
+  <view class='position-block zc' wx:if="{{ isShowPosition }}">
     <view class='position-name'>
       <text class='block left name'>车间主任</text>
       <text class='block right salary theme-color'>5K-10K</text>
@@ -117,7 +117,7 @@
   </view>
 
 
-  <view class='position-block zc'>
+  <view class='position-block zc'  wx:if="{{ isShowPosition }}">
     <view class='position-name'>
       <text class='block left name'>车间主任</text>
       <text class='block right salary theme-color'>5K-10K</text>
@@ -154,7 +154,7 @@
   </view>
 
 
-  <view class='position-block zc'>
+  <view class='position-block zc'  wx:if="{{ isShowPosition }}">
     <view class='position-name'>
       <text class='block left name'>车间主任</text>
       <text class='block right salary theme-color'>5K-10K</text>
@@ -189,5 +189,5 @@
     </view>
 
   </view>
-</block> -->
+</block> 
 <!-- 在招职位 结束  -->

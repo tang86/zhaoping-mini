@@ -38,7 +38,6 @@ input {
 }
 
 .send-seconds {
-  display: block;
   width: 180rpx;
   height: 60rpx;
   border-radius: 20rpx;
@@ -51,4 +50,5 @@ input {
   position: relative;
   top: -82rpx;
   left: 516rpx;
+  z-index: 99;
 }

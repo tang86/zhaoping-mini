@@ -5,9 +5,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    activeCredit: 'active',
+    isShowCredit: true,
+    activeWithdraw: '',
+    isShowWithdraw: false,
+    cardSelected: 100,
+    cards: {
+      first: {
+        img:'../../images/wode/ic_choice_light.png',
+        value: 100,
+        },
+      second: {
+        img: '../../images/wode/ic_choice_gray.png',
+        value: 200,
+      },
+      third: {
+        img: '../../images/wode/ic_choice_gray.png',
+        value: 300,
+      },
+    }
   },
+  activeCredit: function () {
+    this.setData(
+      {
+        activeCredit: 'active',
+        isShowCredit: true,
+        activeWithdraw: '',
+        isShowWithdraw: false,
+      }
+    );
 
+  },
+  selectCard: function (data) {
+    let selected_key = data.currentTarget.dataset.key;
+    let selected_img = '../../images/wode/ic_choice_light.png';
+    let img = '../../images/wode/ic_choice_gray.png';
+    let cards = this.data.cards;
+    for (let key in cards) {
+      if (key === selected_key) {
+        cards[key].img = selected_img;
+      } else {
+        cards[key].img = img;
+      }
+    }
+    
+    this.setData({
+      cards: cards,
+      cardSelected: cards[selected_key].value,
+    });
+  },
+  activeWithdraw: function () {
+    this.setData(
+      {
+        activeCredit: '',
+        isShowCredit: false,
+        activeWithdraw: 'active',
+        isShowWithdraw: true,
+      }
+    );
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

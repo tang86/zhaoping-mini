@@ -14,18 +14,18 @@
 </view>
 <view class='zc credit-body'>
   <view class='cards'>
-    <view class='card'>
-      <image src='../../images/wode/ic_choice_light.png'></image>
+    <view class='card' data-key='first' bindtap='selectCard'>
+      <image src='{{ cards.first.img }}'></image>
       <text class='block card-number'>100元</text>
     </view>
 
-    <view class='card'>
-      <image src='../../images/wode/ic_choice_gray.png'></image>
+    <view class='card' data-key='second' bindtap='selectCard'>
+      <image src='{{ cards.second.img }}'></image>
       <text class='block card-number'>200元</text>
     </view>
 
-    <view class='card no-margin-right'>
-      <image src='../../images/wode/ic_choice_gray.png'></image>
+    <view class='card no-margin-right' data-key='third' bindtap='selectCard'>
+      <image src='{{ cards.third.img }}'></image>
       <text class='block card-number'>300元</text>
     </view>
 
@@ -33,11 +33,11 @@
 </view>
 
 <view class='company-block list-tab'>
-  <text class='tab'>积分记录</text>
-  <text class='tab active'>提现记录</text>
+  <text class='tab {{ activeCredit }}' bindtap='activeCredit'>积分记录</text>
+  <text class='tab {{ activeWithdraw }}' bindtap='activeWithdraw'>提现记录</text>
 </view>
 <!-- 提现记录 开始  -->
-<view class='resume-block'>
+<view class='resume-block' wx:if="{{ isShowWithdraw }}">
   <view class='withdraw-row ceil-line'>
     <view class='left'>
       <text class='block date'>5月28日</text>
@@ -63,7 +63,8 @@
 
 </view>
 <!-- 提现记录 结束  -->
-<!-- <view class='resume-block'>
+<!-- 积分记录 开始  -->
+ <view class='resume-block' wx:if="{{ isShowCredit }}">
   <view class='resume-row ceil-line'>
     <text class='block th'>5月28日 12：22</text>
     <text class='block th'>阅读</text>
@@ -79,6 +80,6 @@
     <text class='block th'>+积分兑换现金</text>
     <text class='block td'>-900积分</text>
   </view>
-</view> -->
-
+</view> 
+<!-- 积分记录 结束  -->
 <button class='bottom-button'>申请提现</button>

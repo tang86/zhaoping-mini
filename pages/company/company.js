@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeInfo: 'active',
+    isShowInfo: true,
+    activePosition: '',
+    isShowPosition: false,
     company:{},
     indicatorDots: false,
     autoplay: true,
@@ -22,6 +26,28 @@ Page({
     ],
   },
 
+  activeInfo: function(){
+    this.setData(
+      {
+        activeInfo: 'active',
+        isShowInfo: true,
+        activePosition: '',
+        isShowPosition: false,
+      }
+    );
+
+  },
+  activePosition: function () {
+    this.setData(
+      {
+        activeInfo: '',
+        isShowInfo: false,
+        activePosition: 'active',
+        isShowPosition: true,
+      }
+    );
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

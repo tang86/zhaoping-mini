@@ -5,14 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+  guid: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (option) {
+    // 拿到guid
+    let This = this;
+    This.setData({
+      guid: option.guid
+    });
+    wx.request({
+      url: getApp().globalData.getOnePosition.url + option.guid,
+      method: getApp().globalData.getOnePosition.method,
+      header: {
+        'Accept': 'application/json',
+      },
+      success(res) {
+        console.log(res)
+        res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
+        This.setData(res.data.data);
+
+      }
+    });
   },
 
   /**

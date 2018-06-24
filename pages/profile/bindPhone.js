@@ -5,7 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
+    seconds: 120,
+    btnText: '获取动态码',
+    timer: null,
+    timerStatus: 'stop',
   
+  },
+
+  sendSMS: function () {
+    let that = this;
+    let current_status = that.data.timerStatus;
+    if (current_status == 'stop') {
+      that.showSeconds();
+      let timer = setInterval(function () {
+        that.showSeconds();
+      }, 1000);
+      that.setData({
+        timer: timer
+      });
+    }
+
+  },
+
+  showSeconds: function () {
+    let that = this;
+    let current_text = '秒后重新发送';
+    let current_seconds = that.data.seconds;
+    
+    let timer = that.data.timer;
+    
+    current_text = current_seconds + current_text;
+    current_seconds -= 1;
+    that.setData({
+      btnText: current_text,
+      seconds: current_seconds,
+      timerStatus: 'starting',
+    });
+
+    if (current_seconds < 0) {
+      clearInterval(timer);
+      that.setData({
+        btnText: '获取动态码',
+        seconds: 120,
+        timerStatus: 'stop',
+      });
+    }
+    
   },
 
   /**
