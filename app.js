@@ -123,7 +123,7 @@ App({
 
     return returnText;
   },
- 
+
   globalData: {
     userInfo: {},
     _token: null,

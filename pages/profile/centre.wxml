@@ -1,9 +1,9 @@
 <view class='zc show-company'>
   <view class='left'>
-    <image class='show-company-img' src='../../images/wode/ic_head_my.png'></image>
+    <image class='show-company-img' src='{{ avatar }}'></image>
     <view class='show-company-name'>
-      <text class='block'>花街的猫</text>
-      <text class='block '><text class='show-company-info'>积分： 900</text></text>
+      <text class='block'>{{ username }}</text>
+      <text class='block '><text class='show-company-info'>积分： {{ points }}</text></text>
     </view>
 
   </view>
@@ -13,26 +13,26 @@
 
 <view class='resume-block'>
 
-  <view class='resume-row'>
+  <view class='resume-row' bindtap='toResume'>
     <image class='icon left' src='../../images/wode/ic_resume.png'></image>
     <text class='block left label'>我的简历</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
     <text class='block right'>完善简历+50积分，只需1分钟</text>
   </view>
-  <view class='resume-row ceil-line'>
+  <view class='resume-row ceil-line' bindtap='toSended'>
     <image class='icon left' src='../../images/wode/ic_delivery.png'></image>
     <text class='block left label'>我的投递</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
     <text class='block right'></text>
   </view>
-  <view class='resume-row ceil-line'>
+  <view class='resume-row ceil-line' bindtap='toJoin'>
     <image class='icon left' src='../../images/wode/ic_admission.png'></image>
     <text class='block left label'>企业入驻</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
     <text class='block right'></text>
   </view>
 
-  <view class='resume-row ceil-line'>
+  <view class='resume-row ceil-line' bindtap='toInvited'>
     <image class='icon left' src='../../images/wode/ic_invitation.png'></image>
     <text class='block left label'>邀请好友</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
