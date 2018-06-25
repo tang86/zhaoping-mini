@@ -12,7 +12,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.request({
+      url: getApp().globalData.getProfileCentre.url, //仅为示例，并非真实的接口地址
+      method: getApp().globalData.getProfileCentre.method,
+      header: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + getApp().globalData._token
+      },
+      success: function (res) {
+        if (res.statusCode === 200) {
+         console.log(res);
+          // getApp().globalData.userInfo.name = res.data.name;
+          // getApp().globalData.userInfo.tel = res.data.tel;
+          // getApp().globalData.userInfo.address = res.data.address;
+          // getApp().globalData.userInfo.sex = res.data.sex;
+          // wx.showModal({
+          //     title: '提示',
+          //     content: res.data.message,
+          //     success: function(res) {
+          //       if (res.confirm) {
+          //         console.log('用户点击确定')
+
+          //       }
+
+          //     }
+          // })
+        } else if (res.statusCode === 422) {
+          var obj = res.data
+          This.setData({
+            disabled: false
+          });
+          wx.showModal({
+            title: '提示',
+            content: res.data.errors[Object.keys(res.data.errors)[0]][0]
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: '网络错误'
+          })
+        }
+      },
+      error: function () {
+        wx.showModal({
+          title: '提示',
+          content: '提交失败'
+        })
+      }
+    })
   },
 
   /**

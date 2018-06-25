@@ -1,18 +1,70 @@
 //app.js
 const host = 'http://localhost:8000/api';
 App({
-  onLaunch: function () {
+  onLaunch: function (option) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
     // 登录
+    let This = this
+    // 小程序打开
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+      success: function (res) {
+        var code = res.code;
+        if (res.code) {
+          wx.getUserInfo({
+            withCredentials: true,
+            success: res => {
+              getApp().globalData.userInfo = res.userInfo;
+              wx.request({
+                url: getApp().globalData.login.url,
+                data: {
+                  js_code: code,
+                  name: res.userInfo.nickName,
+                  head_url: res.userInfo.avatarUrl,
+                },
+                method: getApp().globalData.login.method,
+                success: function (res) {
+                  if (res.statusCode === 200) {
+                    // 登录成功 将token存入本地
+                    getApp().globalData._token = res.data.data._token;
+                    getApp().globalData.userInfo.id = res.data.data.user.id;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.name = res.data.data.user.name;
+                    getApp().globalData.userInfo.open_id = res.data.data.user.open_id;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.address = res.data.data.user.address;
+                    getApp().globalData.userInfo.sex = res.data.data.user.sex;
+                    getApp().globalData.userId = res.data.data.user.id;
+                    // 分享进来的
+                    if (option.query.order_id) {
+                      getApp().globalData.order_id = option.query.order_id;
+                      var order_id = option.query.order_id;
+                      getApp().receiveOrder(order_id);
+                      wx.switchTab({
+                        url: 'pages/home/home'
+                      })
+                    }
+                  }
+                }
+              });
+            },
+            fail: function (res) {
+              // 分享进来的
+              if (option.query.order_id) {
+                getApp().globalData.order_id = option.query.order_id;
+                wx.showModal({
+                  title: '提示',
+                  content: '请先进入我的页面登录再领取'
+                })
+              }
+            }
+          })
+        }
+      },
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -71,8 +123,15 @@ App({
 
     return returnText;
   },
+ 
   globalData: {
-    userInfo: null,
+    userInfo: {},
+    _token: null,
+    host: host,
+    login: {
+      url: host + '/login',
+      method: 'post'
+    },
     get_banner_news: {
       url: host + '/get_banner_news?num=3',
       method: 'get'
@@ -95,6 +154,10 @@ App({
     },
     getOnePosition: {
       url: host + '/position/',
+      method: 'get'
+    },
+    getProfileCentre: {
+      url: host + '/users/points',
       method: 'get'
     },
   }
