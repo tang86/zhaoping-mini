@@ -6,7 +6,55 @@ Page({
    */
   data: {
     positions: [],
+    conditions: {
+      district:{
+        img:'../../images/position/ic_pulldown.png',
+        selected: ''
+      },
+      position: {
+        img: '../../images/position/ic_pulldown.png',
+        selected: ''
+      },
+      salary: {
+        img: '../../images/position/ic_pulldown.png',
+        selected: ''
+      },
+      room: {
+        img: '../../images/position/ic_pulldown.png',
+        selected: ''
+      },
+    }
   
+  },
+  selectedDistrict: function () {
+    this.setSelected('district');
+  },
+  selectedPosition: function () {
+    this.setSelected('position');
+  },
+  selectedSalary: function () {
+    this.setSelected('salary');
+  },
+  selectedRoom: function () {
+    this.setSelected('room');
+  },
+  setSelected: function (name) {
+    let conditions = this.data.conditions;
+    for(let key in conditions) {
+      if (key === name) {
+        conditions[key].img = '../../images/position/ic_line_light.png';
+        conditions[key].selected = 'selected';
+      } else {
+        conditions[key].img = '../../images/position/ic_pulldown.png';
+        conditions[key].selected = '';
+      }
+
+    }
+
+    this.setData({
+      conditions: conditions
+    });
+
   },
   getPositions: function (page = 1) {
     // 显示加载图标  

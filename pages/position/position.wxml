@@ -1,16 +1,29 @@
 <view class='conditions'>
   <view class='zc'>
-    <text class='condition-text'>地区<text class='fold'>+</text></text>
+    <view class='condition-text {{ conditions.district.selected }}' bindtap='selectedDistrict'><text>地区</text>
+      <view class='fold'>
+        <image src='{{ conditions.district.img }}'></image>
+      </view>
+    </view>
 
     <text class='separator'></text>
-    <text class='condition-text'>职位<text class='fold'>+</text></text>
-
+    <view class='condition-text {{ conditions.position.selected }}' bindtap='selectedPosition'><text>职位</text>
+      <view class='fold'>
+        <image src='{{ conditions.position.img }}'></image>
+      </view>
+    </view>
     <text class='separator'></text>
-    <text class='condition-text'>工资<text class='fold'>+</text></text>
-
+    <view class='condition-text {{ conditions.salary.selected }}' bindtap='selectedSalary'><text>工资</text>
+      <view class='fold'>
+        <image src='{{ conditions.salary.img }}'></image>
+      </view>
+    </view>
     <text class='separator'></text>
-    <text class='condition-text'>食宿<text class='fold'>+</text></text>
-
+    <view class='condition-text {{ conditions.room.selected }}' bindtap='selectedRoom'><text>住宿</text>
+      <view class='fold'>
+        <image src='{{ conditions.room.img }}'></image>
+      </view>
+    </view>
   </view>
 
 

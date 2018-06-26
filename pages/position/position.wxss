@@ -18,12 +18,27 @@ page {
   border-left: solid 1rpx #333;
 
 }
+.selected {
+  color: #43aca3 !important;
+}
 .fold {
+  display: inline-block;
   margin-left: 4rpx;
+  width: 16rpx;
+  height: 14rpx;
+  line-height: 90rpx;
+  vertical-align: middle;
+  
+}
+.fold image{
+  display: block;
+  width: 14rpx;
+  height: 7rpx;
 }
 
 .condition-text {
   display: inline-block;
+  
   text-align: center;
   height: 90rpx;
   line-height: 90rpx;
