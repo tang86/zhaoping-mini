@@ -1,5 +1,5 @@
 <view class='resume-block'>
-  <view class='resume-row under-line'>
+  <view class='resume-row under-line' bindtap='toName'>
     <text class='block left label'>真实姓名<text class='required'>*</text></text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
     <text class='block right'>张三</text>
