@@ -36,187 +36,21 @@
   <view class='position-block zc' data-id='{{ item.id }}' bindtap='toPositonDetail'>
     <view class='position-name'>
       <text class='block left name'>{{ item.name }}</text>
-      <text class='block right salary theme-color'>5K-10K</text>
+      <text class='block right salary theme-color'>{{ item.salary.name }}</text>
     </view>
 
     <view class='position-company'>
-      <text class='block left company-name'>北京诺基亚有限公司</text>
+      <text class='block left company-name'>{{ item.company.name }}</text>
       <text class='block right number'>预招{{ item.number }}人</text>
     </view>
 
     <view class='keywords'>
-      <block>
+      <block wx:for="{{ item.keywords_arr }}" wx:key="key">
         <view class='keyword'>
-          <text>3年经验</text>
+          <text>{{ item }}</text>
         </view>
       </block>
-      <block>
-        <view class='keyword'>
-          <text>学历不限</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>双休</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>包吃住</text>
-        </view>
-      </block>
-    </view>
 
-  </view>
-</block>
-
-<block>
-  <view class='position-block zc'>
-    <view class='position-name'>
-      <text class='block left name'>车间主任</text>
-      <text class='block right salary theme-color'>5K-10K</text>
-    </view>
-
-    <view class='position-company'>
-      <text class='block left company-name'>北京诺基亚有限公司</text>
-      <text class='block right number'>预招33人</text>
-    </view>
-
-    <view class='keywords'>
-      <block>
-        <view class='keyword'>
-          <text>3年经验</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>学历不限</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>双休</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>包吃住</text>
-        </view>
-      </block>
-    </view>
-
-  </view>
-</block>
-
-<block>
-  <view class='position-block zc'>
-    <view class='position-name'>
-      <text class='block left name'>车间主任</text>
-      <text class='block right salary theme-color'>5K-10K</text>
-    </view>
-
-    <view class='position-company'>
-      <text class='block left company-name'>北京诺基亚有限公司</text>
-      <text class='block right number'>预招33人</text>
-    </view>
-
-    <view class='keywords'>
-      <block>
-        <view class='keyword'>
-          <text>3年经验</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>学历不限</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>双休</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>包吃住</text>
-        </view>
-      </block>
-    </view>
-
-  </view>
-</block>
-
-<block>
-  <view class='position-block zc'>
-    <view class='position-name'>
-      <text class='block left name'>车间主任</text>
-      <text class='block right salary theme-color'>5K-10K</text>
-    </view>
-
-    <view class='position-company'>
-      <text class='block left company-name'>北京诺基亚有限公司</text>
-      <text class='block right number'>预招33人</text>
-    </view>
-
-    <view class='keywords'>
-      <block>
-        <view class='keyword'>
-          <text>3年经验</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>学历不限</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>双休</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>包吃住</text>
-        </view>
-      </block>
-    </view>
-
-  </view>
-</block>
-
-<block>
-  <view class='position-block zc'>
-    <view class='position-name'>
-      <text class='block left name'>车间主任</text>
-      <text class='block right salary theme-color'>5K-10K</text>
-    </view>
-
-    <view class='position-company'>
-      <text class='block left company-name'>北京诺基亚有限公司</text>
-      <text class='block right number'>预招33人</text>
-    </view>
-
-    <view class='keywords'>
-      <block>
-        <view class='keyword'>
-          <text>3年经验</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>学历不限</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>双休</text>
-        </view>
-      </block>
-      <block>
-        <view class='keyword'>
-          <text>包吃住</text>
-        </view>
-      </block>
     </view>
 
   </view>

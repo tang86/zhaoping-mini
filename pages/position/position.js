@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page: 1,
     positions: [],
     conditions: {
       district:{
@@ -151,7 +152,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    let page = this.data.page;
+    page += 1;
+    this.getPositions(page);
+    this.setData({
+      page: page
+    });
   },
 
   /**

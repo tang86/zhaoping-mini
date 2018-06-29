@@ -24,7 +24,6 @@ Page({
         'Accept': 'application/json',
       },
       success(res) {
-        console.log(res)
         res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
         This.setData(res.data.data);
 
