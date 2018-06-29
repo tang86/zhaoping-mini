@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    company_id: null,
     activeInfo: 'active',
     isShowInfo: true,
     activePosition: '',
@@ -51,8 +52,26 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (option) {
+    console.log(option);
+    // 拿到guid
+    let This = this;
+    This.setData({
+      company_id: option.company_id
+    });
+    wx.request({
+      url: getApp().globalData.getOneCompany.url + option.company_id,
+      method: getApp().globalData.getOneCompany.method,
+      header: {
+        'Accept': 'application/json',
+      },
+      success(res) {
+console.log(res.data.data);
+        This.setData({
+          company: res.data.data
+        });
+      }
+    });
   },
 
   /**

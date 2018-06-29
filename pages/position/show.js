@@ -8,6 +8,13 @@ Page({
   guid: null,
   },
 
+  toCompany: function (option) {
+    let company_id = option.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/company/company?company_id='+company_id,
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -26,7 +33,6 @@ Page({
       success(res) {
         res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
         This.setData(res.data.data);
-
       }
     });
   },

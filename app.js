@@ -156,6 +156,10 @@ App({
       url: host + '/position/',
       method: 'get'
     },
+    getOneCompany: {
+      url: host + '/company/',
+      method: 'get'
+    },
     getProfileCentre: {
       url: host + '/users/points',
       method: 'get'
