@@ -27,8 +27,9 @@ Page({
       },
       success: function (res) {
         if (res.statusCode === 200) {
-console.log(res);
-
+wx.navigateBack({
+  resume_name: data.name
+})
         } else if (res.statusCode === 422) {
           var obj = res.data
           This.setData({
