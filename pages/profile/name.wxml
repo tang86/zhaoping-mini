@@ -1,10 +1,9 @@
+<form bindsubmit="onSubmit">
+  <view class='name'>
+    <input id="name" name="name" class="login-input" type="text" placeholder="请输入姓名" />
+  </view>
 
-  <form bindsubmit="formSubmit">
-<view class='name'>
-<input id="name" name="name" class="login-input" type="text" placeholder="请输入姓名" />
-</view>
-    
-    <view class='zc'>
+  <view class='zc'>
     <button class="submit" formType="submit">保存</button>
-    </view>
-  </form>
+  </view>
+</form>

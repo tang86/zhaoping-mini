@@ -15,9 +15,9 @@ Page({
       url: '/pages/profile/profile',
     });
   },
-  toSended: function () {
+  toSent: function () {
     wx.navigateTo({
-      url: '/pages/profile/sended',
+      url: '/pages/profile/sent',
     });
   },
   toJoin: function () {
@@ -40,7 +40,7 @@ Page({
       avatar: app.globalData.userInfo.avatarUrl
     });
     wx.request({
-      url: getApp().globalData.getProfileCentre.url, //仅为示例，并非真实的接口地址
+      url: getApp().globalData.getProfileCentre.url, 
       method: getApp().globalData.getProfileCentre.method,
       header: {
         'Accept': 'application/json',

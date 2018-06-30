@@ -164,5 +164,17 @@ App({
       url: host + '/users/points',
       method: 'get'
     },
+    postSendResume: {
+      url: host + '/users/send-resume',
+      method: 'post'
+    },
+    postResume: {
+      url: host + '/users/resume/create-or-update',
+      method: 'post'
+    },
+    isSent: {
+      url: host + '/position/is-sent',
+      method: 'get'
+    },
   }
 })

@@ -62,4 +62,5 @@
 </view>
 
 
-<button class='bottom-button'>立即投递简历</button>
+ <button wx:if="{{ !isSent }}" class='bottom-button' data-id='{{ id }}' bindtap='sendResume'>立即投递简历</button> 
+<button wx:if="{{ isSent }}" class='bottom-button grey' >已投递</button>

@@ -1,4 +1,4 @@
-// pages/profile/sended.js
+// pages/profile/sent.js
 Page({
 
   /**

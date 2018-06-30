@@ -50,3 +50,7 @@ page {
 .under-line {
   border-bottom: solid 2rpx #eee;
 }
+
+.grey {
+  background-color: grey;
+}
