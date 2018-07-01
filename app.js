@@ -173,6 +173,10 @@ App({
       url: host + '/users/get-resume',
       method: 'get'
     },
+    getIntentions: {
+      url: host + '/intentions',
+      method: 'get'
+    },
     getCode: {
       url: host + '/code',
       method: 'get'

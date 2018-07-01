@@ -29,7 +29,14 @@
   <view class='resume-row under-line'>
     <text class='block left label'>目前所在城市</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>上海</text>
+    <view class='block right'>
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{ resume.city ? resume.city : '请选择' }}
+        </view>
+      </picker>
+    </view>
+
   </view>
   <view class='resume-row' bindtap='toBindPhone'>
     <text class='block left label'>手机号<text class='required'>*</text></text>
@@ -42,7 +49,11 @@
   <view class='resume-row'>
     <text class='block left label'>求职意向</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>挖掘机</text>
+    <view class='block right'>
+    <picker mode="selector" range="{{ intentions }}" value="{{ intentionIndex }}" bindchange="intentionPickerSelected">
+        <text>{{ resume.intentions_name ? resume.intentions_name :'请选择' }}</text>
+      </picker>
+    </view>
   </view>
 </view>
 
