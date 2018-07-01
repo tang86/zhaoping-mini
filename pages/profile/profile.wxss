@@ -14,7 +14,7 @@
   font-size: 28rpx;
 }
 
-.resume-block .resume-row text.right {
+.resume-block .resume-row view.right {
   font-size: 28rpx;
   color: #888;
 }

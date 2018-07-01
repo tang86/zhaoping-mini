@@ -126,6 +126,7 @@ App({
 
   globalData: {
     userInfo: {},
+    resume: {},
     _token: null,
     host: host,
     login: {
@@ -152,6 +153,10 @@ App({
       url: host + '/positions',
       method: 'get'
     },
+    getSentPositions: {
+      url: host + '/sent-positions',
+      method: 'get'
+    },
     getOnePosition: {
       url: host + '/position/',
       method: 'get'
@@ -164,8 +169,20 @@ App({
       url: host + '/users/points',
       method: 'get'
     },
+    getResume: {
+      url: host + '/users/get-resume',
+      method: 'get'
+    },
+    getCode: {
+      url: host + '/code',
+      method: 'get'
+    },
     postSendResume: {
       url: host + '/users/send-resume',
+      method: 'post'
+    },
+    postUpdateUser: {
+      url: host + '/users/update',
       method: 'post'
     },
     postResume: {
@@ -175,6 +192,10 @@ App({
     isSent: {
       url: host + '/position/is-sent',
       method: 'get'
+    },
+    addExperience: {
+      url: host + '/users/add-experience',
+      method: 'post'
     },
   }
 })

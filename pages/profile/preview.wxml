@@ -2,14 +2,14 @@
   <view class='left'>
 
     <view class='show-company-name'>
-      <text class='block company-name'>张三</text>
-      <text class='block '><text class='show-company-info'>23/男/3年经验/离职/北京</text>
+      <text class='block company-name'>{{ resume.name }}</text>
+      <text class='block '><text class='show-company-info'>{{ resume.age }}/{{resume.gender }}/3年经验/离职/北京</text>
       </text>
     </view>
 
   </view>
   <view class='right'>
-    <image class='show-company-img' src='../../images/wode/ic_head.png'></image>
+    <image class='show-company-img' src='{{ resume.user.head_url }}'></image>
   </view>
 </view>
 
@@ -17,7 +17,7 @@
   
   <view class='resume-row ceil-line'>
     <text class='block left label'>手机号</text>
-    <text class='block right'>15010946994</text>
+    <text class='block right'>{{ resume.user.mobile }}</text>
   </view>
   <view class='resume-row ceil-line'>
     <text class='block left label'>求职意向</text>
@@ -25,6 +25,17 @@
   </view>
 </view>
 
-<view class='no-experience'>
+<view class='no-experience' hidden='{{ resume.experiences.length > 0 ? true : false }}'>
 <text>该用户没有添加工作经验</text>
+</view>
+
+<view class='resume-block' hidden='{{ resume.experiences.length > 0 ? false : true }}'>
+  <block wx:for="{{ resume.experiences }}" wx:key="key">
+    <view class='resume-row under-line'>
+      <text class='block left label'>{{ item.company_name }}</text>
+      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
+      <view class='block right'>{{ item.started_date }} 至 {{ item.ended_date }}</view>
+    </view>
+  </block>
+
 </view>

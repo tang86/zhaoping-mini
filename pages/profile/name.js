@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name: '',
 
   },
   onSubmit: function (e) {
@@ -27,9 +28,9 @@ Page({
       },
       success: function (res) {
         if (res.statusCode === 200) {
-wx.navigateBack({
-  resume_name: data.name
-})
+          getApp().globalData.resume.name = data.name;
+          console.log(getApp().globalData.resume);
+          wx.navigateBack()
         } else if (res.statusCode === 422) {
           var obj = res.data
           This.setData({
@@ -73,6 +74,10 @@ wx.navigateBack({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      name: getApp().globalData.resume.name
+    });
+  
 
   },
 

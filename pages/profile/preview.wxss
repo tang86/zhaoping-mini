@@ -72,3 +72,34 @@
   color: #888;
   text-align: center;
 }
+
+.resume-block {
+  margin-top: 15rpx;
+}
+.resume-block .resume-row {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.resume-block .label {
+  font-size: 28rpx;
+}
+
+.resume-block .resume-row view.right {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.resume-block .resume-row .tap-mark {
+  display: block;
+  width: 12rpx;
+  height: 21rpx;
+  margin-top: 36rpx;
+  margin-left: 15rpx;
+}
+.resume-block .resume-row.under-line {
+  border-bottom: solid 2rpx #eee;
+}

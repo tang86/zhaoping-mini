@@ -54,3 +54,13 @@ page {
 .grey {
   background-color: grey;
 }
+
+.placeholder {
+  font-size: 28rpx;
+  color: #888;
+}
+
+textarea {
+  font-size: 28rpx;
+  color: #333;
+}

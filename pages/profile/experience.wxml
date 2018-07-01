@@ -1,25 +1,48 @@
-<view class='resume-block'>
-  <view class='resume-row under-line'>
-    <text class='block left label'>企业名称</text>
-    <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>北京摩托罗拉有限公司</text>
-  </view>
-  <view class='resume-row under-line'>
-    <text class='block left label'>企业类别</text>
-    <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>金融</text>
-  </view>
-  <view class='resume-row'>
-    <text class='block left label'>工作时间</text>
-    <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>请选择 <text class='bold'>至</text> 请选择</text>
-  </view>
-</view>
-<view class='experience-title'>
-<text>工作内容</text></view>
+<form bindsubmit="onSubmit">
+  <view class='resume-block'>
+    <view class='resume-row under-line'>
+      <text class='block left label'>企业名称</text>
+      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
+      <view class='block right'>
+        <input id="company_name" name="company_name" type="text" placeholder="请输入企业名称" />
+      </view>
+    </view>
+    <view class='resume-row under-line'>
+      <text class='block left label'>企业类别</text>
+      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
+      <view class='block right'>
+        <picker mode="selector" range="{{ companyCategories }}" value="{{ companyCategoryIndex }}" bindchange="companyCategoryPickerSelected">
+          <text>{{ companyCategories[companyCategoryIndex] }}</text>
+          <input id="category_name" name="category_name" type='text' hidden='true' value='{{ companyCategories[companyCategoryIndex] }}' />
+        </picker>
+      </view>
+    </view>
+    <view class='resume-row'>
+      <text class='block left label'>工作时间</text>
+      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
+      <view class='block right'>
+        <picker mode="date" value="{{ startedDate }}" start="1970.1.1" fields="month" bindchange="startedDatePickerSelected">
+          <text>{{ startedDate }}</text>
+          <input id="startedDate" name="startedDate" type='text' value='{{ startedDate }}' hidden='true' />
+        </picker>
+        <text class='block bold left'>至</text>
+        <picker mode="date" value="{{ endedDate }}" start="1970.1.1" fields="month" bindchange="endedDatePickerSelected">
+          <text>{{ endedDate }}</text>
+          <input id="endedDate" name="endedDate" type='text' value='{{ endedDate }}' hidden='true' />
+        </picker>
+      </view>
 
-<textarea placeholder='工作描述： 120字以内'>
-</textarea>
-<view class='zc'>
-  <button class="submit" formType="submit">保存</button>
-</view>
+
+    </view>
+  </view>
+  <view class='experience-title'>
+    <text>工作内容</text>
+  </view>
+
+  <textarea id='description' name="description" placeholder='工作描述： 120字以内' placeholder-class="placeholder">
+  </textarea>
+  <view class='zc'>
+    <button class="submit" formType="submit">保存</button>
+  </view>
+
+</form>

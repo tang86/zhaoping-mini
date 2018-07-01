@@ -32,7 +32,7 @@
 
 
 
-<block wx:for="{{ positions }}">
+<block wx:for="{{ positions }}" wx:key="key">
   <view class='position-block zc' data-id='{{ item.id }}' bindtap='toPositonDetail'>
     <view class='position-name'>
       <text class='block left name'>{{ item.name }}</text>

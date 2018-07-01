@@ -1,6 +1,6 @@
 <form bindsubmit="onSubmit">
   <view class='name'>
-    <input id="name" name="name" class="login-input" type="text" placeholder="请输入姓名" />
+    <input id="name" name="name" class="login-input" type="text" placeholder="请输入姓名" value='{{ name }}'/>
   </view>
 
   <view class='zc'>
