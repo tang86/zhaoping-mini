@@ -1,4 +1,5 @@
 // pages/position/position.js
+
 Page({
 
   /**
@@ -8,24 +9,63 @@ Page({
     page: 1,
     positions: [],
     conditions: {
-      district:{
-        img:'../../images/position/ic_pulldown.png',
-        selected: ''
+      district: {
+        img: '../../images/position/ic_pulldown.png',
+        selected: '',
+        isShowSub: true,
+        items: {},
+
       },
       position: {
         img: '../../images/position/ic_pulldown.png',
-        selected: ''
+        selected: '',
+        isShowSub: true,
+        items: {},
       },
       salary: {
         img: '../../images/position/ic_pulldown.png',
-        selected: ''
+        selected: '',
+        isShowSub: true,
+        items: [{
+          id: 1,
+          name: '1K~3K',
+          selected: '',
+        },
+        {
+          id: 2,
+          name: '3K~5K',
+          selected: '',
+        },
+        {
+          id: 3,
+          name: '5K~10K',
+          selected: '',
+        },
+        ],
       },
       room: {
         img: '../../images/position/ic_pulldown.png',
-        selected: ''
+        selected: '',
+        isShowSub: true,
+        items: [{
+          id: 1,
+          name: '包吃住',
+          selected: '',
+        },
+        {
+          id: 2,
+          name: '包吃',
+          selected: '',
+        },
+        {
+          id: 3,
+          name: '包住',
+          selected: '',
+        },
+        ],
       },
     }
-  
+
   },
   selectedDistrict: function () {
     this.setSelected('district');
@@ -41,21 +81,41 @@ Page({
   },
   setSelected: function (name) {
     let conditions = this.data.conditions;
-    for(let key in conditions) {
+    for (let key in conditions) {
       if (key === name) {
         conditions[key].img = '../../images/position/ic_line_light.png';
         conditions[key].selected = 'selected';
+        conditions[key].isShowSub = false;
       } else {
         conditions[key].img = '../../images/position/ic_pulldown.png';
         conditions[key].selected = '';
+        conditions[key].isShowSub = true;
       }
 
     }
-
     this.setData({
       conditions: conditions
     });
 
+  },
+  selectOption: function (option) {
+    let condition = option.currentTarget.dataset.type;
+    let id = option.currentTarget.dataset.id;
+    let conditions = this.data.conditions;
+    for (let key in conditions[condition].items) {
+      if (conditions[condition].items[key].id === id) {
+        conditions[condition].items[key].selected = 'sub-selected';
+      } else {
+        conditions[condition].items[key].selected = '';
+      }
+
+    }
+    this.setData({
+      conditions: conditions
+    });
+  },
+  selectFirstOption: function (option) {
+    
   },
   getPositions: function (page = 1) {
     // 显示加载图标  
@@ -110,14 +170,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -131,21 +191,21 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
@@ -164,6 +224,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

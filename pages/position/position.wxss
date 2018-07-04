@@ -1,26 +1,58 @@
 @import "../layout/style.wxss";
+
 page {
   background-color: #f8f8f8;
 }
+
 .conditions {
   width: 100%;
   height: 90rpx;
   background-color: #fff;
   border-top: solid 2rpx #eee;
   border-bottom: solid 2rpx #eee;
+  position: relative;
+}
+
+.conditions .sub-conditions {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #fff;
+  font-size: 26rpx;
+  line-height: 110rpx;
+  border-top: solid 2rpx #eee;
+}
+
+.conditions .sub-conditions .simple-condition {
+  height: 110rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.conditions .sub-conditions .multi-condition {
+  width: 50%;
+  height: 110rpx;
+  border-bottom: 2rpx solid #eee;
+  background-color: #fff;
+  float: left;
 }
 
 .conditions text {
   height: 90rpx;
-  line-height: 90rpx;
 }
-.separator{
-  border-left: solid 1rpx #333;
 
+.separator {
+  border-left: solid 1rpx #333;
 }
+
 .selected {
   color: #43aca3 !important;
 }
+
+.sub-selected {
+  color: #43aca3 !important;
+  background-color: #f8f8f8 !important;
+}
+
 .fold {
   display: inline-block;
   margin-left: 4rpx;
@@ -28,9 +60,9 @@ page {
   height: 14rpx;
   line-height: 90rpx;
   vertical-align: middle;
-  
 }
-.fold image{
+
+.fold image {
   display: block;
   width: 14rpx;
   height: 7rpx;
@@ -38,7 +70,6 @@ page {
 
 .condition-text {
   display: inline-block;
-  
   text-align: center;
   height: 90rpx;
   line-height: 90rpx;
@@ -50,22 +81,22 @@ page {
 .position-block {
   width: 100%;
   height: 216rpx;
-
   padding-top: 35rpx;
   padding-bottom: 28rpx;
   margin-bottom: 17rpx;
   background-color: #fff;
 }
+
 .position-name {
   overflow: hidden;
   padding: 0 !important;
-
-
 }
+
 .position-name .name {
   font-size: 32rpx;
   font-weight: bold;
 }
+
 .position-name .salary {
   font-size: 30rpx;
 }
@@ -73,13 +104,13 @@ page {
 .position-company {
   padding: 0 !important;
   height: 50rpx;
-
 }
 
 .company-name {
   overflow: hidden;
   font-size: 28rpx;
 }
+
 .position-company .number {
   font-size: 22rpx;
 }
@@ -102,5 +133,4 @@ page {
   line-height: 44rpx;
   padding: 9rpx 17rpx;
   margin-right: 24rpx;
-
 }

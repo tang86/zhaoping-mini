@@ -1,33 +1,69 @@
 <view class='conditions'>
   <view class='zc'>
-    <view class='condition-text {{ conditions.district.selected }}' bindtap='selectedDistrict'><text>地区</text>
+    <view class='condition-text {{ conditions.district.selected }}' bindtap='selectedDistrict'>
+      <text>地区</text>
       <view class='fold'>
         <image src='{{ conditions.district.img }}'></image>
       </view>
     </view>
 
     <text class='separator'></text>
-    <view class='condition-text {{ conditions.position.selected }}' bindtap='selectedPosition'><text>职位</text>
+    <view class='condition-text {{ conditions.position.selected }}' bindtap='selectedPosition'>
+      <text>职位</text>
       <view class='fold'>
         <image src='{{ conditions.position.img }}'></image>
       </view>
     </view>
     <text class='separator'></text>
-    <view class='condition-text {{ conditions.salary.selected }}' bindtap='selectedSalary'><text>工资</text>
+    <view class='condition-text {{ conditions.salary.selected }}' bindtap='selectedSalary'>
+      <text>工资</text>
       <view class='fold'>
         <image src='{{ conditions.salary.img }}'></image>
       </view>
     </view>
     <text class='separator'></text>
-    <view class='condition-text {{ conditions.room.selected }}' bindtap='selectedRoom'><text>住宿</text>
+    <view class='condition-text {{ conditions.room.selected }}' bindtap='selectedRoom'>
+      <text>住宿</text>
       <view class='fold'>
         <image src='{{ conditions.room.img }}'></image>
       </view>
     </view>
   </view>
-
-
-
+  <!-- 折叠部分 开始  -->
+  <view class='sub-conditions'>
+    <!-- 地区 开始 -->
+    <block wx:for="{{ conditions.district.items }}" wx:key="key">
+      <view hidden='{{ conditions.district.isShowSub }} {{ key }}' class='multi-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectFirstOption'>
+        <text>{{ item }}</text>
+      </view>
+      <view hidden='{{ conditions.district.isShowSub }}' class='multi-condition sub-selected {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectSecondOption'>
+        <text>{{ item }}</text>
+      </view>
+    </block>
+    <!-- 地区 结束 -->
+    <!-- 职位 开始 -->
+    <block wx:for="{{ conditions.position.items }}" wx:key="key">
+      <view hidden='{{ conditions.position.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="position" bindtap='selectOption'>
+        <text>{{ item.name }}</text>
+      </view>
+    </block>
+    <!-- 职位 结束 -->
+    <!-- 工资 开始 -->
+    <block wx:for="{{ conditions.salary.items }}" wx:key="key">
+      <view hidden='{{ conditions.salary.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="salary" bindtap='selectOption'>
+        <text>{{ item.name }}</text>
+      </view>
+    </block>
+    <!-- 工资 结束 -->
+    <!-- 住宿 开始 -->
+    <block wx:for="{{ conditions.room.items }}" wx:key="key">
+      <view hidden='{{ conditions.room.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="room" bindtap='selectOption'>
+        <text>{{ item.name }}</text>
+      </view>
+    </block>
+    <!-- 住宿 结束 -->
+  </view>
+  <!-- 折叠部分 结束  -->
 </view>
 
 
