@@ -6,26 +6,59 @@ Page({
    * 页面的初始数据
    */
   data: {
+    data_districts: {},
+    district_selected_number: 0,
+    position_selected_number: 0,
     page: 1,
+    current_sub_districts: [],
     positions: [],
     conditions: {
       district: {
         img: '../../images/position/ic_pulldown.png',
         selected: '',
-        isShowSub: true,
+        isHideSub: true,
         items: {},
 
       },
       position: {
         img: '../../images/position/ic_pulldown.png',
         selected: '',
-        isShowSub: true,
-        items: {},
+        isHideSub: true,
+        items: [
+          {
+            id: 1,
+            name: '医疗',
+            slected: ''
+          },
+          {
+            id: 2,
+            name: '金融',
+            slected: ''
+          },
+          {
+            id: 3,
+            name: '教育',
+            slected: ''
+          }
+          ,
+          {
+            id: 4,
+            name: '科技',
+            slected: ''
+          }
+          ,
+          {
+            id: 5,
+            name: '机械',
+            slected: ''
+          }
+
+        ],
       },
       salary: {
         img: '../../images/position/ic_pulldown.png',
         selected: '',
-        isShowSub: true,
+        isHideSub: true,
         items: [{
           id: 1,
           name: '1K~3K',
@@ -46,7 +79,7 @@ Page({
       room: {
         img: '../../images/position/ic_pulldown.png',
         selected: '',
-        isShowSub: true,
+        isHideSub: true,
         items: [{
           id: 1,
           name: '包吃住',
@@ -85,11 +118,11 @@ Page({
       if (key === name) {
         conditions[key].img = '../../images/position/ic_line_light.png';
         conditions[key].selected = 'selected';
-        conditions[key].isShowSub = false;
+        conditions[key].isHideSub = false;
       } else {
         conditions[key].img = '../../images/position/ic_pulldown.png';
         conditions[key].selected = '';
-        conditions[key].isShowSub = true;
+        conditions[key].isHideSub = true;
       }
 
     }
@@ -115,14 +148,118 @@ Page({
     });
   },
   selectFirstOption: function (option) {
-    
+    console.log(option);
+    let condition = option.currentTarget.dataset.type;
+    let id = option.currentTarget.dataset.id;
+    let conditions = this.data.conditions;
+    for (let key in conditions[condition].items) {
+      if (conditions[condition].items[key].id === id) {
+        conditions[condition].items[key].selected = 'sub-selected';
+      } else {
+        conditions[condition].items[key].selected = '';
+      }
+
+    }
+    let data_districts = this.data.data_districts;
+    this.setData({
+      district_selected_number: 0,
+      current_sub_districts: data_districts.cities[id],
+      conditions: conditions
+    });
+  },
+  resetSecondOption: function (option) {
+
+    let current_sub_districts = this.data.current_sub_districts;
+    for (let key in current_sub_districts) {
+      current_sub_districts[key].selected = '';
+    }
+    this.setData({
+      district_selected_number: 0,
+      current_sub_districts: current_sub_districts,
+    });
+  },
+  selectSecondOption: function (option) {
+    let district_selected_number = this.data.district_selected_number;
+    let condition = option.currentTarget.dataset.type;
+    let id = option.currentTarget.dataset.id;
+    let current_sub_districts = this.data.current_sub_districts;
+    for (let key in current_sub_districts) {
+      if (current_sub_districts[key].id === id && district_selected_number <= 3) {
+        if (current_sub_districts[key].selected == 'sub-selected') {
+          current_sub_districts[key].selected = '';
+          district_selected_number--;
+        } else {
+          current_sub_districts[key].selected = 'sub-selected';
+          district_selected_number++;
+
+        }
+
+      } else {
+        //current_sub_districts[key].selected = '';
+      }
+
+    }
+
+    let data_districts = this.data.data_districts;
+    this.setData({
+      district_selected_number: district_selected_number,
+      current_sub_districts: current_sub_districts,
+    });
+  },
+  selectPositionOption: function (option) {
+    let position_selected_number = this.data.position_selected_number;
+    let condition = option.currentTarget.dataset.type;
+    let id = option.currentTarget.dataset.id;
+    let conditions = this.data.conditions;
+    for (let key in conditions[condition].items) {
+      if (conditions[condition].items[key].id === id && position_selected_number <= 2) {
+        if (conditions[condition].items[key].selected == 'sub-selected') {
+          conditions[condition].items[key].selected = '';
+          position_selected_number--;
+        } else {
+          conditions[condition].items[key].selected = 'sub-selected';
+          position_selected_number++;
+        }
+
+      } else if (conditions[condition].items[key].id === id && conditions[condition].items[key].selected == 'sub-selected') {
+        conditions[condition].items[key].selected = '';
+        position_selected_number--;
+      } {
+        //current_sub_districts[key].selected = '';
+      }
+
+    }
+    console.log(position_selected_number);
+    let data_districts = this.data.data_districts;
+    this.setData({
+      position_selected_number: position_selected_number,
+      conditions: conditions,
+    });
+  },
+  search: function () {
+    let conditions = this.data.conditions;
+    for (let key in conditions) {
+      conditions[key].isHideSub = true;
+    }
+    this.setData({
+      conditions: conditions
+    });
   },
   getDistricts: function () {
+    let that = this;
     wx.request({
       url: getApp().globalData.getDistricts.url,
       method: getApp().globalData.getDistricts.method,
       success: function (res) {
-        console.log(res);
+        let conditions = that.data.conditions;
+        conditions.district.items = res.data.data.all
+        conditions.district.items[0].selected = 'sub-selected';
+
+        that.setData({
+          data_districts: res.data.data,
+          current_sub_districts: res.data.data.cities[1],
+          conditions: conditions
+        });
       }
     });
   },
@@ -179,7 +316,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-this.getDistricts();
+    this.getDistricts();
   },
 
   /**

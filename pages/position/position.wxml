@@ -34,70 +34,92 @@
     <!-- 地区 开始 -->
     <!-- 第一层 开始  -->
     <view class='area-left'>
-    <block wx:for="{{ conditions.district.items }}" wx:key="key">
-      <view hidden='{{ conditions.district.isShowSub }} {{ key }}' class='multi-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectFirstOption'>
-        <text>{{ item }}</text>
-      </view>
-    
-    </block>
+      <block wx:for="{{ conditions.district.items }}" wx:key="key">
+        <view hidden='{{ conditions.district.isHideSub }}' class='multi-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectFirstOption'>
+          <text>{{ item.name }}</text>
+        </view>
+
+      </block>
     </view>
     <view class='area-right'>
-    <block wx:for="{{ conditions.district.items }}" wx:key="key">
-      <view hidden='{{ conditions.district.isShowSub }}' class='multi-condition sub-selected {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectSecondOption'>
-        <text>{{ item }}</text>
-      </view>
-    </block>
+      <block wx:for="{{ current_sub_districts }}" wx:key="key">
+        <view hidden='{{ conditions.district.isHideSub }}' class='multi-condition sub-city {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectSecondOption'>
+          <text>{{ item.name }}</text>
+        </view>
+      </block>
     </view>
-    
     <!-- 第一层 结束  -->
+
+    <view class='district-buttons' hidden='{{ conditions.district.isHideSub }}'>
+      <view class='district-reset' bindtap='resetSecondOption'>
+        <text>重置条件</text>
+      </view>
+      <view class='district-confirm' bindtap='search'>
+        <text>确定{{ district_selected_number > 0 ? '（'+district_selected_number+'）' : '' }}</text>
+      </view>
+    </view>
     <!-- 地区 结束 -->
     <!-- 职位 开始 -->
-    <block wx:for="{{ conditions.position.items }}" wx:key="key">
-      <view hidden='{{ conditions.position.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="position" bindtap='selectOption'>
-        <text>{{ item.name }}</text>
+
+      <view class=''>
+        <block wx:for="{{ conditions.position.items }}" wx:key="key">
+          <view hidden='{{ conditions.position.isHideSub }}' class='position-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="position" bindtap='selectPositionOption'>
+            <text>{{ item.name }}</text>
+          </view>
+
+        </block>
       </view>
-    </block>
+      <!-- 第一层 结束  -->
+
+      <view class='district-buttons' hidden='{{ conditions.position.isHideSub }}'>
+        <view class='district-reset' bindtap='resetSecondOption'>
+          <text>重置条件</text>
+        </view>
+        <view class='district-confirm' bindtap='search'>
+          <text>确定{{ position_selected_number > 0 ? '（'+position_selected_number+'）' : '' }}</text>
+        </view>
+</view>
     <!-- 职位 结束 -->
     <!-- 工资 开始 -->
     <block wx:for="{{ conditions.salary.items }}" wx:key="key">
-      <view hidden='{{ conditions.salary.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="salary" bindtap='selectOption'>
+      <view hidden='{{ conditions.salary.isHideSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="salary" bindtap='selectOption'>
         <text>{{ item.name }}</text>
       </view>
     </block>
     <!-- 工资 结束 -->
     <!-- 住宿 开始 -->
     <block wx:for="{{ conditions.room.items }}" wx:key="key">
-      <view hidden='{{ conditions.room.isShowSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="room" bindtap='selectOption'>
+      <view hidden='{{ conditions.room.isHideSub }}' class='simple-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="room" bindtap='selectOption'>
         <text>{{ item.name }}</text>
       </view>
     </block>
     <!-- 住宿 结束 -->
+    </view>
+    <!-- 折叠部分 结束  -->
   </view>
-  <!-- 折叠部分 结束  -->
-</view>
 
 
 
-<block wx:for="{{ positions }}" wx:key="key">
-  <view class='position-block zc' data-id='{{ item.id }}' bindtap='toPositonDetail'>
-    <view class='position-name'>
-      <text class='block left name'>{{ item.name }}</text>
-      <text class='block right salary theme-color'>{{ item.salary.name }}</text>
+  <block wx:for="{{ positions }}" wx:key="key">
+    <view class='position-block zc' data-id='{{ item.id }}' bindtap='toPositonDetail'>
+      <view class='position-name'>
+        <text class='block left name'>{{ item.name }}</text>
+        <text class='block right salary theme-color'>{{ item.salary.name }}</text>
+      </view>
+
+      <view class='position-company'>
+        <text class='block left company-name'>{{ item.company.name }}</text>
+        <text class='block right number'>预招{{ item.number }}人</text>
+      </view>
+
+      <view class='keywords'>
+        <block wx:for="{{ item.keywords_arr }}" wx:key="key">
+          <view class='keyword'>
+            <text>{{ item }}</text>
+          </view>
+        </block>
+
+      </view>
+
     </view>
-
-    <view class='position-company'>
-      <text class='block left company-name'>{{ item.company.name }}</text>
-      <text class='block right number'>预招{{ item.number }}人</text>
-    </view>
-
-    <view class='keywords'>
-      <block wx:for="{{ item.keywords_arr }}" wx:key="key">
-        <view class='keyword'>
-          <text>{{ item }}</text>
-        </view>
-      </block>
-
-    </view>
-
-  </view>
-</block>
+  </block>

@@ -14,6 +14,7 @@ page {
 }
 
 .conditions .sub-conditions {
+  position: absolute;
   width: 100%;
   height: auto;
   text-align: center;
@@ -35,11 +36,39 @@ page {
   background-color: #fff;
   float: left;
 }
+.sub-city {
+  background-color: #f8f8f8 !important;
+}
 .area-left {
-  width: 50%;
+  float: left;
+  width: 49%;
 }
 .area-right {
-  width: 50%;
+  float: left;
+  width: 49%;
+}
+.district-buttons {
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+}
+.district-reset {
+  float: left;
+  width: 49%;
+  border-bottom: solid 2rpx #eee;
+  border-right: solid 2rpx #eee;
+  border-top: solid 2rpx #eee;
+}
+.district-confirm {
+  float: left;
+  width: 49%;
+  border-bottom: solid 2rpx #eee;
+  border-top: solid 2rpx #eee;
+  color: #43aca3;
+}
+.position-condition {
+  width: 49%;
+  float: left;
 }
 
 .conditions text {
