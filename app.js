@@ -149,6 +149,10 @@ App({
       url: host + '/news/',
       method: 'get'
     },
+    getDistricts: {
+      url: host + '/districts',
+      method: 'get'
+    },
     getPositions: {
       url: host + '/positions',
       method: 'get'

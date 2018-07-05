@@ -117,6 +117,15 @@ Page({
   selectFirstOption: function (option) {
     
   },
+  getDistricts: function () {
+    wx.request({
+      url: getApp().globalData.getDistricts.url,
+      method: getApp().globalData.getDistricts.method,
+      success: function (res) {
+        console.log(res);
+      }
+    });
+  },
   getPositions: function (page = 1) {
     // 显示加载图标  
     wx.showLoading({
@@ -170,7 +179,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+this.getDistricts();
   },
 
   /**

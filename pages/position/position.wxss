@@ -29,11 +29,17 @@ page {
 }
 
 .conditions .sub-conditions .multi-condition {
-  width: 50%;
+  width: 100%;
   height: 110rpx;
   border-bottom: 2rpx solid #eee;
   background-color: #fff;
   float: left;
+}
+.area-left {
+  width: 50%;
+}
+.area-right {
+  width: 50%;
 }
 
 .conditions text {

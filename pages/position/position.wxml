@@ -32,14 +32,24 @@
   <!-- 折叠部分 开始  -->
   <view class='sub-conditions'>
     <!-- 地区 开始 -->
+    <!-- 第一层 开始  -->
+    <view class='area-left'>
     <block wx:for="{{ conditions.district.items }}" wx:key="key">
       <view hidden='{{ conditions.district.isShowSub }} {{ key }}' class='multi-condition {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectFirstOption'>
         <text>{{ item }}</text>
       </view>
+    
+    </block>
+    </view>
+    <view class='area-right'>
+    <block wx:for="{{ conditions.district.items }}" wx:key="key">
       <view hidden='{{ conditions.district.isShowSub }}' class='multi-condition sub-selected {{ item.selected }}' data-id='{{ item.id }}' data-type="district" bindtap='selectSecondOption'>
         <text>{{ item }}</text>
       </view>
     </block>
+    </view>
+    
+    <!-- 第一层 结束  -->
     <!-- 地区 结束 -->
     <!-- 职位 开始 -->
     <block wx:for="{{ conditions.position.items }}" wx:key="key">
