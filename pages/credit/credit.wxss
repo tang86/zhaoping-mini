@@ -161,3 +161,47 @@
   text-align: right;
 }
 /* 提现列表 结束  */
+
+
+/* 自定义吐司提示 开始  */
+.wx-mask{
+  position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+.toast-out {
+  position: fixed;
+  top: 440rpx;
+  left: 30rpx;
+  z-index: 9999;
+  width: 690rpx;
+  height: 180rpx;
+  display: flex;            
+  justify-content: center; 
+  additive-symbols: center;
+}
+.toast-out .toast-in {
+  z-index: 9999;
+  min-width: 100px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: #fff;
+  padding: 6px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+}
+.toast-out .toast-in span {
+  font-size: 30px;
+}
+.toast-out .toast-in .toast-txt {
+  font-size: 32rpx;
+  line-height: 180rpx;
+  color: #333;
+}
+/* 自定义吐司提示 结束  */

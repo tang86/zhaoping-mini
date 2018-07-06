@@ -64,7 +64,7 @@
 </view>
 <!-- 提现记录 结束  -->
 <!-- 积分记录 开始  -->
- <view class='resume-block' wx:if="{{ isShowCredit }}">
+<view class='resume-block' wx:if="{{ isShowCredit }}">
   <view class='resume-row ceil-line'>
     <text class='block th'>5月28日 12：22</text>
     <text class='block th'>阅读</text>
@@ -80,6 +80,18 @@
     <text class='block th'>+积分兑换现金</text>
     <text class='block td'>-900积分</text>
   </view>
-</view> 
+</view>
 <!-- 积分记录 结束  -->
 <button class='bottom-button'>申请提现</button>
+
+
+
+<view class='toast-out' wx:if='{{ isShow }}'>
+<view class='wx-mask'></view>
+  <view class='toast-in'>
+    
+    <view class='toast-txt'>
+      {{ txt }}
+    </view>
+  </view>
+</view>
