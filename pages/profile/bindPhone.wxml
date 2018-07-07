@@ -1,9 +1,9 @@
 <form bindsubmit="onSubmit">
   <view class='input'>
-    <input id="mobile" name="mobile" class="login-input" type="text" placeholder="请输入手机号" bindinput='mobileInput' />
+    <input id="mobile" name="mobile" placeholder-class='placeholder' class="login-input" type="text" placeholder="请输入手机号" bindinput='mobileInput' />
   </view>
   <view class='last-input'>
-    <input id="code" name="code" class="login-input" type="text" placeholder="请输入验证码" bindinput='codeInput' />
+    <input id="code" name="code" placeholder-class='placeholder' class="login-input" type="text" placeholder="请输入验证码" bindinput='codeInput' />
     <view class='send-seconds' bindtap='sendSMS'>{{ btnText }}</view>
   </view>
   <view class='zc'>

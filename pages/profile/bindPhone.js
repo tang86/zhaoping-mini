@@ -27,7 +27,7 @@ Page({
     });
   },
   onSubmit: function (e) {
-    console.log('提交');
+    
     var This = this;
     var data = e.detail.value;
     if (data.mobile.length === 0) {
@@ -54,8 +54,8 @@ Page({
     }
 
     wx.request({
-      url: getApp().globalData.postUpdateUser.url,
-      method: getApp().globalData.postUpdateUser.method,
+      url: getApp().globalData.postBindMobile.url,
+      method: getApp().globalData.postBindMobile.method,
       data: data,
       header: {
         'Accept': 'application/json',
@@ -63,9 +63,18 @@ Page({
       },
       success: function (res) {
         if (res.statusCode === 200) {
+          if (res.data.data.status == 1) {
+            getApp().globalData.resume.mobile = This.data.mobile;
+            wx.navigateBack()
+          } else {
+            wx.showModal({
+              title: '提示',
+              content: res.data.message,
+              showCancel: false
+            })
+          }
           
-          getApp().globalData.resume.mobile = This.data.mobile;
-          wx.navigateBack()
+          
         } else if (res.statusCode === 422) {
           var obj = res.data
           This.setData({
@@ -160,6 +169,9 @@ Page({
         timerStatus: 'stop',
       });
     }
+
+  },
+  bindMobile: function () {
 
   },
 

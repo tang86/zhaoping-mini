@@ -7,7 +7,31 @@ Page({
   data: {
     guid: null
   },
+  increasePointsRead: function () {
+    let that = this;
+    let data = {
+      code: 'news_id_'+this.data.guid
+    };
+    wx.request({
+      url: getApp().globalData.increasePointsRead.url,
+      method: getApp().globalData.increasePointsRead.method,
+      data: data,
+      header: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + getApp().globalData._token
+      },
+      success(res) {
 
+        if (res.data.data.status == 1) {
+          that.toast.toastShow('阅读文章+1积分');
+        } else {
+
+        }
+        
+
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -17,11 +41,13 @@ Page({
     This.setData({
       guid: option.guid
     });
+
     wx.request({
       url: getApp().globalData.getOneNews.url + option.guid,
       method: getApp().globalData.getOneNews.method,
       header: {
         'Accept': 'application/json',
+        'Authorization': 'Bearer ' + getApp().globalData._token
       },
       success(res) {
         res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
@@ -35,14 +61,16 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //获得toast组件
+    this.toast = this.selectComponent("#toast");
+    this.increasePointsRead();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+   // this.toast.toastShow('阅读文章+1积分');
   },
 
   /**

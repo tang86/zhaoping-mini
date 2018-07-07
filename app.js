@@ -205,6 +205,10 @@ App({
       url: host + '/users/update',
       method: 'post'
     },
+    postBindMobile: {
+      url: host + '/users/bind-mobile',
+      method: 'post'
+    },
     postResume: {
       url: host + '/users/resume/create-or-update',
       method: 'post'
@@ -215,6 +219,10 @@ App({
     },
     addExperience: {
       url: host + '/users/add-experience',
+      method: 'post'
+    },
+    increasePointsRead: {
+      url: host + '/credit/increase-points-read',
       method: 'post'
     },
   }

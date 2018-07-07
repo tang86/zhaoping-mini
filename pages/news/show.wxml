@@ -4,13 +4,16 @@
   </view>
   <view class='show-post'>
     <text class='news-author'>作者：区域聘</text>
-    <text class='news-date'>2018-05-26</text>
+    <text class='news-date'>{{ updated_at }}</text>
   </view>
 </view>
 
 
 <view class='show-content'>
-<image src='{{ banner }}'></image>
-<text>{{ content }}</text>
+  <image src='{{ banner }}'></image>
+  <text>{{ content }}</text>
 
 </view>
+
+<toast id='toast' txt='我是标题'>
+</toast>

@@ -1,5 +1,8 @@
 {
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "区域聘",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "toast": "/components/Toast/toast"
+  }
 }
