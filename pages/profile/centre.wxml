@@ -1,7 +1,7 @@
 <view class='zc show-company'>
   <view class='left'>
     <image class='show-company-img' src='{{ avatar }}'></image>
-    <view class='show-company-name'>
+    <view class='show-company-name' bindtap='toMyPoints'>
       <text class='block'>{{ username }}</text>
       <text class='block '><text class='show-company-info'>积分： {{ points }}</text></text>
     </view>

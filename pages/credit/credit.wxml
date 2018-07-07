@@ -1,12 +1,12 @@
 <view class='credit-head'>
   <view class='helf'>
     <text class='block name'>我的积分</text>
-    <text class='block number'>900</text>
+    <text class='block number'>{{ points }}</text>
   </view>
   <view class='upright left'></view>
   <view class='helf'>
     <text class='block name'>可兑换现金</text>
-    <text class='block number'>￥90</text>
+    <text class='block number'>￥{{ money }}</text>
   </view>
 </view>
 <view>
@@ -38,58 +38,41 @@
 </view>
 <!-- 提现记录 开始  -->
 <view class='resume-block' wx:if="{{ isShowWithdraw }}">
-  <view class='withdraw-row ceil-line'>
-    <view class='left'>
-      <text class='block date'>5月28日</text>
-      <text class='block time'>12:32:21</text>
+  <block wx:for="{{ withdrawLogs }}" wx:key="key">
+    <view class='withdraw-row ceil-line'>
+      <view class='left'>
+        <text class='block date'>{{ item.date }}</text>
+        <text class='block time'>{{ item.time }}</text>
+      </view>
+      <view class='right'>
+        <text class='block cash'>￥{{ item.money }}</text>
+        <text class='block status'>{{ item.status_name }}</text>
+      </view>
     </view>
-    <view class='right'>
-      <text class='block cash'>￥100</text>
-      <text class='block status'>等待中</text>
-    </view>
+  </block>
 
-  </view>
-  <view class='withdraw-row ceil-line'>
-    <view class='left'>
-      <text class='block date'>5月28日</text>
-      <text class='block time'>12:32:21</text>
-    </view>
-    <view class='right'>
-      <text class='block cash'>￥100</text>
-      <text class='block status'>等待中</text>
-    </view>
-
-  </view>
 
 </view>
 <!-- 提现记录 结束  -->
 <!-- 积分记录 开始  -->
 <view class='resume-block' wx:if="{{ isShowCredit }}">
-  <view class='resume-row ceil-line'>
-    <text class='block th'>5月28日 12：22</text>
-    <text class='block th'>阅读</text>
-    <text class='block td'>+1积分</text>
-  </view>
-  <view class='resume-row ceil-line'>
-    <text class='block th'>5月28日 12：22</text>
-    <text class='block th'>邀请好友</text>
-    <text class='block td'>+50积分</text>
-  </view>
-  <view class='resume-row ceil-line under-line'>
-    <text class='block th'>5月28日 12：22</text>
-    <text class='block th'>+积分兑换现金</text>
-    <text class='block td'>-900积分</text>
-  </view>
+  <block wx:for="{{ pointsLogs }}" wx:key="key">
+    <view class='resume-row ceil-line'>
+      <text class='block th'>{{ item.created_at }}</text>
+      <text class='block th'>{{ item.remark }}</text>
+      <text class='block td'>{{ item.points }}积分</text>
+    </view>
+  </block>
 </view>
 <!-- 积分记录 结束  -->
-<button class='bottom-button'>申请提现</button>
+<button class='bottom-button' bindtap='onWithdraw'>申请提现</button>
 
 
 
 <view class='toast-out' wx:if='{{ isShow }}'>
-<view class='wx-mask'></view>
+  <view class='wx-mask'></view>
   <view class='toast-in'>
-    
+
     <view class='toast-txt'>
       {{ txt }}
     </view>

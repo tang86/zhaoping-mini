@@ -185,6 +185,18 @@ App({
       url: host + '/code',
       method: 'get'
     },
+    getPointsLogs: {
+      url: host + '/users/points-logs',
+      method: 'get'
+    },
+    getWithdrawLogs: {
+      url: host + '/users/withdraw-logs',
+      method: 'get'
+    },
+    postWithdraw: {
+      url: host + '/users/withdraw',
+      method: 'post'
+    },
     postSendResume: {
       url: host + '/users/send-resume',
       method: 'post'

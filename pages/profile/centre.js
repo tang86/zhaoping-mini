@@ -10,6 +10,11 @@ Page({
     username: null,
     points: 0
   },
+  toMyPoints: function () {
+    wx.navigateTo({
+      url: '/pages/credit/credit',
+    });
+  },
   toResume: function () {
     wx.navigateTo({
       url: '/pages/profile/profile',
