@@ -32,6 +32,25 @@ Page({
     });
   },
   onSubmit: function (e) {
+    if (e.detail.value.company_name == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请填写企业名称'
+      })
+      return false;
+    } else if (e.detail.value.startedDate == '请选择') {
+      wx.showModal({
+        title: '提示',
+        content: '请选择工作开始时间'
+      })
+      return false;
+    } else if (e.detail.value.description == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请选择工作开始时间'
+      })
+      return false;
+    }
 
     var This = this;
     var data = e.detail.value;
@@ -75,7 +94,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCompanyCategories();
   },
 
   /**
@@ -125,5 +144,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getCompanyCategories: function () {
+    let that = this;
+    wx.request({
+      url: getApp().globalData.getCompanyCategories.url,
+      method: getApp().globalData.getCompanyCategories.method,
+      success: function (res) {
+        let companyCategories = that.data.companyCategories;
+console.log(res.data.data);
+        that.setData({
+          companyCategories: res.data.data
+        });
+      }
+    });
   }
 })

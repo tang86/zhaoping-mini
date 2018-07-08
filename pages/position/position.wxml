@@ -54,7 +54,7 @@
       <view class='district-reset' bindtap='resetSecondOption'>
         <text>重置条件</text>
       </view>
-      <view class='district-confirm' bindtap='search'>
+      <view class='district-confirm' bindtap='search' data-type="district">
         <text>确定{{ district_selected_number > 0 ? '（'+district_selected_number+'）' : '' }}</text>
       </view>
     </view>
@@ -75,7 +75,7 @@
         <view class='district-reset' bindtap='resetSecondOption'>
           <text>重置条件</text>
         </view>
-        <view class='district-confirm' bindtap='search'>
+        <view class='district-confirm' bindtap='search' data-type="position">
           <text>确定{{ position_selected_number > 0 ? '（'+position_selected_number+'）' : '' }}</text>
         </view>
 </view>

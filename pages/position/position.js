@@ -132,6 +132,7 @@ Page({
 
   },
   selectOption: function (option) {
+    let that = this;
     let condition = option.currentTarget.dataset.type;
     let id = option.currentTarget.dataset.id;
     let conditions = this.data.conditions;
@@ -146,9 +147,17 @@ Page({
     this.setData({
       conditions: conditions
     });
+
+    this.getPositions(1, condition);
+
+    setTimeout(function () {
+      that.initConditions();
+    }, 500)
+
+
   },
   selectFirstOption: function (option) {
-    console.log(option);
+
     let condition = option.currentTarget.dataset.type;
     let id = option.currentTarget.dataset.id;
     let conditions = this.data.conditions;
@@ -209,6 +218,8 @@ Page({
   selectPositionOption: function (option) {
     let position_selected_number = this.data.position_selected_number;
     let condition = option.currentTarget.dataset.type;
+    let current_sub_positions = this.data.current_sub_positions;
+
     let id = option.currentTarget.dataset.id;
     let conditions = this.data.conditions;
     for (let key in conditions[condition].items) {
@@ -229,14 +240,15 @@ Page({
       }
 
     }
-    console.log(position_selected_number);
-    let data_districts = this.data.data_districts;
+
     this.setData({
       position_selected_number: position_selected_number,
       conditions: conditions,
     });
   },
-  search: function () {
+  search: function (option) {
+    let condition = option.currentTarget.dataset.type;
+    let that = this;
     let conditions = this.data.conditions;
     for (let key in conditions) {
       conditions[key].isHideSub = true;
@@ -244,6 +256,11 @@ Page({
     this.setData({
       conditions: conditions
     });
+    this.getPositions(1, condition);
+    setTimeout(function () {
+      that.initConditions();
+    }, 500)
+
   },
   getDistricts: function () {
     let that = this;
@@ -263,21 +280,31 @@ Page({
       }
     });
   },
-  getPositions: function (page = 1) {
+  getPositions: function (page = 1, name = '') {
     // 显示加载图标  
     wx.showLoading({
       title: '玩命加载中',
     })
     var This = this;
+    let selectedConditions = This.getSelectedConditions(name);
+    let data = {
+      page: page,
+      selectedConditions: selectedConditions
+    };
     wx.request({
       url: getApp().globalData.getPositions.url,
       method: getApp().globalData.getPositions.method,
-      data: { page: page },
+      data: data,
       success: function (res) {
         console.log(res.data.data.data);
         if (res.statusCode === 200) {
           let positions = This.data.positions;
-          positions = positions.concat(res.data.data.data);
+          if (page === 1) {
+            positions = res.data.data.data;
+          } else {
+            positions = positions.concat(res.data.data.data);
+          }
+
           This.setData({
             positions: positions,
           });
@@ -317,6 +344,7 @@ Page({
    */
   onLoad: function (options) {
     this.getDistricts();
+    this.getConditions();
   },
 
   /**
@@ -371,5 +399,81 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getConditions: function () {
+    let that = this;
+    wx.request({
+      url: getApp().globalData.getConditions.url,
+      method: getApp().globalData.getConditions.method,
+      success: function (res) {
+        console.log(res.data.data);
+        let conditions = that.data.conditions;
+        conditions.position.items = res.data.data.company_categories;
+        conditions.salary.items = res.data.data.salaries;
+        that.setData({
+          conditions: conditions
+        });
+      }
+    });
+  },
+  getSelectedConditions: function (name = '') {
+
+    let districts = [];
+    let positions = [];
+    let salaries = [];
+    let room = [];
+
+    if (name == '' || name == 'district') {
+      // 地区
+      districts = this.getSelectedIds(this.data.current_sub_districts);
+    }
+
+
+    //职位
+    if (name == '' || name == 'position') {
+      positions = this.getSelectedIds(this.data.conditions.position.items);
+    }
+    //工资
+    if (name == '' || name == 'salary') {
+      salaries = this.getSelectedIds(this.data.conditions.salary.items);
+    }
+    //住宿
+    if (name == '' || name == 'room') {
+      room = this.getSelectedIds(this.data.conditions.room.items);
+    }
+    let selectedConditions = {
+      district_id: districts,
+      company_category_id: positions,
+      salary_id: salaries,
+      room_and_board: room,
+    };
+
+    return selectedConditions;
+  },
+  getSelectedIds: function (obj) {
+
+    let ids = [];
+    for (let key in obj) {
+
+      if (obj[key].hasOwnProperty('selected')) {
+        if ((obj[key].selected != '')) {
+          ids.push(obj[key].id)
+        }
+      }
+    }
+    return ids;
+  },
+  initConditions: function () {
+    let conditions = this.data.conditions;
+    for (let key in conditions) {
+
+      conditions[key].img = '../../images/position/ic_pulldown.png';
+      conditions[key].selected = '';
+      conditions[key].isHideSub = true;
+
+    }
+    this.setData({
+      conditions: conditions
+    });
   }
 })

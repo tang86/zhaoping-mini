@@ -20,12 +20,12 @@ App({
               getApp().globalData.userInfo = res.userInfo;
               wx.request({
                 url: getApp().globalData.login.url,
+                method: getApp().globalData.login.method,
                 data: {
                   js_code: code,
                   name: res.userInfo.nickName,
                   head_url: res.userInfo.avatarUrl,
-                },
-                method: getApp().globalData.login.method,
+                },                
                 success: function (res) {
                   if (res.statusCode === 200) {
                     // 登录成功 将token存入本地
@@ -153,6 +153,10 @@ App({
       url: host + '/districts',
       method: 'get'
     },
+    getConditions: {
+      url: host + '/get-conditions',
+      method: 'get'
+    },
     getPositions: {
       url: host + '/positions',
       method: 'get'
@@ -191,6 +195,14 @@ App({
     },
     getWithdrawLogs: {
       url: host + '/users/withdraw-logs',
+      method: 'get'
+    },
+    getInviteLogs: {
+      url: host + '/users/invite-logs',
+      method: 'get'
+    },
+    getCompanyCategories: {
+      url: host + '/get-company-categories',
       method: 'get'
     },
     postWithdraw: {

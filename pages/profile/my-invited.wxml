@@ -1,6 +1,10 @@
-<view class='invited-log'>
-<text class='block'>成功邀请1位好友，即可获得50积分奖励，邀请10个
+<view>
+  <view class='invited-log'>
+    <text class='block'>成功邀请1位好友，即可获得50积分奖励，邀请10个
 好友即可获得50元现金奖励！</text>
-</view>
+  </view>
 
-<view class='my-invited-log under-line ceil-line'><text>邀请记录</text></view>
+  <view class='my-invited-log under-line ceil-line'>
+    <text>邀请记录</text>
+  </view>
+</view>

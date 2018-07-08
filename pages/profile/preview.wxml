@@ -3,7 +3,7 @@
 
     <view class='show-company-name'>
       <text class='block company-name'>{{ resume.name }}</text>
-      <text class='block '><text class='show-company-info'>{{ resume.age }}/{{resume.gender }}/3年经验/离职/北京</text>
+      <text class='block '><text class='show-company-info'>{{ resume.age }}/{{ resume.gender }}/{{ resume.experience_year }}年经验/{{ resume.status_name }}/{{ resume.city }}</text>
       </text>
     </view>
 
@@ -21,7 +21,7 @@
   </view>
   <view class='resume-row ceil-line'>
     <text class='block left label'>求职意向</text>
-    <text class='block right'>不限</text>
+    <text class='block right'>{{ resume.intentions_name }}</text>
   </view>
 </view>
 

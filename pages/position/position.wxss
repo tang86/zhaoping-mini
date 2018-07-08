@@ -69,6 +69,8 @@ page {
 .position-condition {
   width: 49%;
   float: left;
+  border-bottom: solid 2rpx #eee;
+  border-right: solid 2rpx #eee;
 }
 
 .conditions text {

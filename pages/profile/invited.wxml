@@ -1,23 +1,37 @@
-<view class='invited-log'>
-<text class='block'>累计邀请12个好友，10个好友完善了简历，获得了
-500积分</text>
-</view>
+<!-- 无邀请记录 开始  -->
+<view wx:if="{{ invitees.length < 1}}">
+  <view class='invited-log'>
+    <text class='block'>成功邀请1位好友，即可获得50积分奖励，邀请10个
+好友即可获得50元现金奖励！</text>
+  </view>
 
-<view class='resume-block'>
-  
-  <view class='resume-row ceil-line'>
-    <text class='block th'>好友昵称</text>
-    <text class='block th'>积分</text>
-    <text class='block th'>状态</text>
-  </view>
-  <view class='resume-row ceil-line'>
-    <text class='block td'>花街的猫</text>
-    <text class='block td'>+50积分</text>
-    <text class='block td'>已完善简历</text>
-  </view>
-     <view class='resume-row ceil-line under-line'>
-    <text class='block td'>花街的猫</text>
-    <text class='block td'>+50积分</text>
-    <text class='block td'>已完善简历</text>
+  <view class='my-invited-log under-line ceil-line'>
+    <text>邀请记录</text>
   </view>
 </view>
+<!-- 无邀请记录 结束  -->
+<!-- 邀请列表 开始  -->
+<view wx:if="{{ invitees.length > 0 }}">
+  <view class='invited-log'>
+    <text class='block'>累计邀请{{ invite_users }}个好友，{{ complete_resume_number }}个好友完善了简历，获得了
+{{ points }}积分</text>
+  </view>
+
+  <view class='resume-block'>
+
+    <view class='resume-row ceil-line'>
+      <text class='block th'>好友昵称</text>
+      <text class='block th'>积分</text>
+      <text class='block th'>状态</text>
+    </view>
+    <block wx:for="{{ invitees }}" wx:key="key">
+      <view class='resume-row ceil-line'>
+        <text class='block td'>{{ item.user.name }}</text>
+        <text class='block td'>+{{ item.points }}积分</text>
+        <text class='block td'>{{ item.resume_status_name }}</text>
+      </view>
+    </block>
+
+  </view>
+</view>
+<!-- 邀请列表 结束  -->
