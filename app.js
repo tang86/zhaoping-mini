@@ -181,6 +181,10 @@ App({
       url: host + '/users/get-resume',
       method: 'get'
     },
+    hasResume: {
+      url: host + '/users/has-resume',
+      method: 'get'
+    },
     getIntentions: {
       url: host + '/intentions',
       method: 'get'
@@ -235,6 +239,10 @@ App({
     },
     increasePointsRead: {
       url: host + '/credit/increase-points-read',
+      method: 'post'
+    },
+    increasePointsShare: {
+      url: host + '/credit/increase-points-share',
       method: 'post'
     },
   }

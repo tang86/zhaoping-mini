@@ -10,7 +10,7 @@
 
   </view>
   <view class='right'>
-    <image class='show-company-img' src='../../images/position/ic_logo.png'></image>
+    <image class='show-company-img' src='{{ company.logo_url }}'></image>
   </view>
 </view>
 
@@ -21,16 +21,16 @@
 <!-- 公司信息 开始  -->
 <view class='zc' wx:if="{{ isShowInfo }}">
   <view class='banner'>
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{banners}}" wx:key='banner-key'>
-        <swiper-item data-id="{{item.id}}" bindtap="toNewsDetail">
-          <image src="{{item.banner}}" class="slide-image" />
+    <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange='onSlideChangeEnd'>
+      <block wx:for="{{ banners }}" wx:key='banner-key'>
+        <swiper-item data-id="{{ item.id }}" bindtap="toNewsDetail">
+          <image src="{{ item.banner }}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
   </view>
   <view class='img-number'>
-    <text>1/6</text>
+    <text>{{ index }}/{{ company.imgs.length }}</text>
   </view>
   <view class='profile'>
     <text class='block profile-title'>公司简介</text>

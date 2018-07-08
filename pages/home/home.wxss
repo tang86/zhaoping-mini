@@ -99,9 +99,11 @@ swiper image {
   color: #333;
 }
 .news-content {
+  display: block;
   margin-top: 24rpx;
   font-size: 24rpx;
   line-height: auto;
+  height: 80rxp;
   color: #999;
 }
 .news-hits {

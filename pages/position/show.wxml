@@ -39,6 +39,7 @@
     <image class='ic-bar' src='../../images/position/ic_Verticalbar.png'></image>
     <text class='block'>福利待遇</text>
   </view>
+  <text>\n</text>
   <text class='block content'>{{ benefit }}</text>
 
 </view>
@@ -46,7 +47,7 @@
 
 <view class='zc show-company' data-id='{{ company.id }}' bindtap='toCompany'>
   <view class='left'>
-    <image class='show-company-img' src='../../images/position/ic_logo.png'></image>
+    <image class='show-company-img' src='{{ company.logo_url }}'></image>
     <view class='show-company-name'>
       <text class='block'>{{ company.name }}</text>
       <text class='block '><text class='show-company-info'>{{ company.company_status.name }}</text>
@@ -62,5 +63,8 @@
 </view>
 
 
- <button wx:if="{{ !isSent }}" class='bottom-button' data-id='{{ id }}' bindtap='sendResume'>立即投递简历</button> 
-<button wx:if="{{ isSent }}" class='bottom-button grey' >已投递</button>
+<button wx:if="{{ !isSent }}" class='bottom-button' data-id='{{ id }}' bindtap='sendResume'>立即投递简历</button>
+<button wx:if="{{ isSent }}" class='bottom-button grey'>已投递</button>
+
+<toast id='toast' txt='我是标题'>
+</toast>

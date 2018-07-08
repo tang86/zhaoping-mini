@@ -5,12 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index: 1,
     company_id: null,
     activeInfo: 'active',
     isShowInfo: true,
     activePosition: '',
     isShowPosition: false,
-    company:{},
+    company: {},
     indicatorDots: false,
     autoplay: true,
     interval: 5000,
@@ -26,8 +27,14 @@ Page({
       }
     ],
   },
-
-  activeInfo: function(){
+  onSlideChangeEnd: function (e) {
+    var that = this;
+    that.setData({
+      index: e.detail.current + 1
+    })
+    console.log(that.data.index);
+  },
+  activeInfo: function () {
     this.setData(
       {
         activeInfo: 'active',
@@ -53,7 +60,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
-    console.log(option);
+    
     // 拿到guid
     let This = this;
     This.setData({
@@ -66,9 +73,10 @@ Page({
         'Accept': 'application/json',
       },
       success(res) {
-console.log(res.data.data);
+        console.log(res.data.data);
         This.setData({
-          company: res.data.data
+          company: res.data.data,
+          banners: res.data.data.img_urls
         });
       }
     });
@@ -78,48 +86,48 @@ console.log(res.data.data);
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

@@ -51,16 +51,16 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "职位详情",
 					"pathName": "pages/position/show",
-					"query": ""
+					"query": "guid=3"
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "企业详情",
 					"pathName": "pages/company/company",
-					"query": ""
+					"query": "company_id=52"
 				},
 				{
 					"id": -1,
