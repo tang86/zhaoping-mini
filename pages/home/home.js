@@ -119,6 +119,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(e) {
+    if (JSON.stringify(e) != '{}') {
+      console.log(e);
+      if (e.hasOwnProperty('inviter_id')) {
+        getApp().globalData.inviter_id = e.inviter_id;
+      }
+
+    }
+
     var This = this;
     This.getBanners();
     This.getNotices();

@@ -2,10 +2,6 @@
 const host = 'http://localhost:8000/api';
 App({
   onLaunch: function (option) {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
     // 登录
     let This = this
@@ -25,9 +21,12 @@ App({
                   js_code: code,
                   name: res.userInfo.nickName,
                   head_url: res.userInfo.avatarUrl,
+                  inviter_id: getApp().globalData.inviter_id
                 },                
                 success: function (res) {
                   if (res.statusCode === 200) {
+                    console.log(res.data.data);
+                    console.log(getApp().globalData.inviter_id);
                     // 登录成功 将token存入本地
                     getApp().globalData._token = res.data.data._token;
                     getApp().globalData.userInfo.id = res.data.data.user.id;
@@ -125,6 +124,7 @@ App({
   },
 
   globalData: {
+    inviter_id: null,
     userInfo: {},
     resume: {},
     _token: null,
@@ -245,5 +245,7 @@ App({
       url: host + '/credit/increase-points-share',
       method: 'post'
     },
-  }
+  },
+
+
 })

@@ -30,13 +30,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "首页",
 					"pathName": "pages/home/home",
-					"query": ""
+					"query": "inviter_id=9",
+					"scene": "1036",
+					"referrerInfo": {}
 				},
 				{
 					"id": 0,
