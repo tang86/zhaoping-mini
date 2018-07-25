@@ -7,21 +7,21 @@
       </view>
     </view>
 
-    <text class='separator'></text>
+    <view class='separator'></view>
     <view class='condition-text {{ conditions.position.selected }}' bindtap='selectedPosition'>
       <text>职位</text>
       <view class='fold'>
         <image src='{{ conditions.position.img }}'></image>
       </view>
     </view>
-    <text class='separator'></text>
+    <view class='separator'></view>
     <view class='condition-text {{ conditions.salary.selected }}' bindtap='selectedSalary'>
       <text>工资</text>
       <view class='fold'>
         <image src='{{ conditions.salary.img }}'></image>
       </view>
     </view>
-    <text class='separator'></text>
+    <view class='separator'></view>
     <view class='condition-text {{ conditions.room.selected }}' bindtap='selectedRoom'>
       <text>住宿</text>
       <view class='fold'>

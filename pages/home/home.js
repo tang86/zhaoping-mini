@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    indicatorDots: true,
+    indicatorDots: false,
     autoplay: true,
     interval: 5000,
     duration: 1000,
