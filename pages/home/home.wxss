@@ -31,6 +31,8 @@ swiper image {
   left: 24rpx;
   padding: 16rpx 0;
   overflow: hidden;
+  opacity: 0.85;
+  
 }
 
 .pinzixun image {
@@ -60,6 +62,7 @@ swiper image {
   line-height: 87rpx;
   padding: 26rpx 24rpx;
   color: #333;
+  display: none;
 }
 
 .hit-more {
@@ -70,6 +73,7 @@ swiper image {
   color: #999;
 }
 .news-list {
+  margin-top: 100rpx;
   padding-bottom: 30rpx;
 }
 .news-block {

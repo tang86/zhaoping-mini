@@ -78,7 +78,13 @@ page {
 }
 
 .separator {
-  border-left: solid 1rpx #333;
+  /* border-left: solid 1rpx #333; */
+  display: inline-block;
+  background-color: #333;
+  width: 2rpx;
+  height: 40rpx;
+  vertical-align: middle;
+
 }
 
 .selected {
@@ -110,7 +116,7 @@ page {
   text-align: center;
   height: 90rpx;
   line-height: 90rpx;
-  width: 174rpx;
+  width: 172rpx;
   font-size: 23.49rpx;
   color: #333;
 }
