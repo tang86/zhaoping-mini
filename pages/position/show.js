@@ -179,7 +179,8 @@ Page({
     }
     return {
       title: '区域聘小程序',
-      path: 'pages/home/home',
+      path: '/pages/position/show',
+      imageUrl: '/images/position_share.png',
       success: function (res) {
         // 转发成功
         console.log("转发成功:" + JSON.stringify(res));
@@ -244,7 +245,7 @@ Page({
     console.log('我去加积分');
     let that = this;
     let data = {
-      code: 'share_id_' + this.data.guid
+      code: 'share_position_id_' + this.data.guid
     };
     wx.request({
       url: getApp().globalData.increasePointsShare.url,

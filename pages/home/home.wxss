@@ -26,7 +26,7 @@ swiper image {
   background-color: #fff;
   border-radius: 20rpx;
   margin: auto;
-  position: absolute;
+  /* position: absolute; */
   top: 275rpx;
   left: 24rpx;
   padding: 16rpx 0;
@@ -73,7 +73,7 @@ swiper image {
   color: #999;
 }
 .news-list {
-  margin-top: 100rpx;
+  /* margin-top: 100rpx; */
   padding-bottom: 30rpx;
 }
 .news-block {

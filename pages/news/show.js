@@ -104,7 +104,55 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+    onShareAppMessage: function (ops) {
+    let that = this;
+    if (ops.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(ops.target)
+    }
+    return {
+      title: '区域聘小程序',
+      path: '/pages/news/show',
+      imageUrl: '/images/news_share.png',
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:" + JSON.stringify(res));
+        //加积分
+        that.increasePointsShare();
 
-  }
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
+
+  },
+    increasePointsShare: function () {
+    console.log('我去加积分');
+    let that = this;
+    let data = {
+      code: 'share_news_id_' + this.data.guid
+    };
+    wx.request({
+      url: getApp().globalData.increasePointsShare.url,
+      method: getApp().globalData.increasePointsShare.method,
+      data: data,
+      header: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer ' + getApp().globalData._token
+      },
+      success(res) {
+
+        if (res.data.data.status == 1) {
+
+          that.toast.toastShow('分享成功+1积分');
+        } else {
+          console.log('加积分失败了');
+        }
+
+
+      }
+    });
+  },
 })
