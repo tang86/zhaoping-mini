@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '需要您的授权',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,7 +16,8 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+    if (app.globalData.userInfo && app.globalData.userInfo.id) {
+      
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -49,6 +50,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+
+    app.getUserInfo();
+    wx.navigateBack({
+      delta: 1,
     })
   }
 })

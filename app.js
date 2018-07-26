@@ -1,74 +1,20 @@
 //app.js
-const host = 'http://localhost:8000/api';
+ const host = 'http://localhost:8000/api';
+//const host = 'https://www.quyupin.com/api';
 App({
   onLaunch: function (option) {
 
     // 登录
     let This = this
     // 小程序打开
-    wx.login({
-      success: function (res) {
-        var code = res.code;
-        if (res.code) {
-          wx.getUserInfo({
-            withCredentials: true,
-            success: res => {
-              getApp().globalData.userInfo = res.userInfo;
-              wx.request({
-                url: getApp().globalData.login.url,
-                method: getApp().globalData.login.method,
-                data: {
-                  js_code: code,
-                  name: res.userInfo.nickName,
-                  head_url: res.userInfo.avatarUrl,
-                  inviter_id: getApp().globalData.inviter_id
-                },                
-                success: function (res) {
-                  if (res.statusCode === 200) {
-                    console.log(res.data.data);
-                    console.log(getApp().globalData.inviter_id);
-                    // 登录成功 将token存入本地
-                    getApp().globalData._token = res.data.data._token;
-                    getApp().globalData.userInfo.id = res.data.data.user.id;
-                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                    getApp().globalData.userInfo.name = res.data.data.user.name;
-                    getApp().globalData.userInfo.open_id = res.data.data.user.open_id;
-                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
-                    getApp().globalData.userInfo.address = res.data.data.user.address;
-                    getApp().globalData.userInfo.sex = res.data.data.user.sex;
-                    getApp().globalData.userId = res.data.data.user.id;
-                    // 分享进来的
-                    if (option.query.order_id) {
-                      getApp().globalData.order_id = option.query.order_id;
-                      var order_id = option.query.order_id;
-                      getApp().receiveOrder(order_id);
-                      wx.switchTab({
-                        url: 'pages/home/home'
-                      })
-                    }
-                  }
-                }
-              });
-            },
-            fail: function (res) {
-              // 分享进来的
-              if (option.query.order_id) {
-                getApp().globalData.order_id = option.query.order_id;
-                wx.showModal({
-                  title: '提示',
-                  content: '请先进入我的页面登录再领取'
-                })
-              }
-            }
-          })
-        }
-      },
-    });
+    This.getUserInfo();
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log('get setting');
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          console.log('已经授权了');
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
@@ -80,6 +26,11 @@ App({
                 this.userInfoReadyCallback(res)
               }
             }
+          })
+        } else {
+          console.log('未授权呢');
+          wx.navigateTo({
+            url: '/pages/index/index',
           })
         }
       }
@@ -121,6 +72,58 @@ App({
     returnText = returnText.replace(/>/gi, '>');
 
     return returnText;
+  },
+
+  getUserInfo: function () {
+    console.log('执行getUserInfo');
+    wx.login({
+      success: function (res) {
+        console.log(res);
+        var code = res.code;
+        if (res.code) {
+          console.log('获取用户信息');
+          wx.getUserInfo({
+            withCredentials: true,
+            success: res => {
+
+              getApp().globalData.userInfo = res.userInfo;
+              wx.request({
+                url: getApp().globalData.login.url,
+                method: getApp().globalData.login.method,
+                data: {
+                  js_code: code,
+                  name: res.userInfo.nickName,
+                  head_url: res.userInfo.avatarUrl,
+                  inviter_id: getApp().globalData.inviter_id
+                },
+                success: function (res) {
+                  if (res.statusCode === 200) {
+                    // 登录成功 将token存入本地
+                    getApp().globalData._token = res.data.data._token;
+                    getApp().globalData.userInfo.id = res.data.data.user.id;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.name = res.data.data.user.name;
+                    getApp().globalData.userInfo.open_id = res.data.data.user.open_id;
+                    getApp().globalData.userInfo.tel = res.data.data.user.tel;
+                    getApp().globalData.userInfo.address = res.data.data.user.address;
+                    getApp().globalData.userInfo.sex = res.data.data.user.sex;
+                    getApp().globalData.userId = res.data.data.user.id;
+
+                  }
+                }
+              });
+            },
+            fail: function (res) {
+              console.log(res);
+
+            }
+          });
+
+
+        }
+      },
+    });
+
   },
 
   globalData: {
