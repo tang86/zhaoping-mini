@@ -1,16 +1,16 @@
 <form bindsubmit="onSubmit">
   <view class='resume-block'>
     <view class='resume-row under-line'>
-      <text class='block left label'>企业名称</text>
-      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-      <view class='block right'>
-        <input id="company_name" name="company_name" type="text" placeholder="请输入企业名称" />
+      <view class="left"><text class='block left label'>企业名称</text></view>
+      <view class="right"><image class='tap-mark' src='../../images/wode/tap_me.png'></image></view>
+      <view class='right'>
+        <input class="input" id="company_name" name="company_name" type="text" placeholder="请输入企业名称" />
       </view>
     </view>
     <view class='resume-row under-line'>
-      <text class='block left label'>企业类别</text>
-      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-      <view class='block right'>
+      <view class="left"><text class='block left label'>企业类别</text></view>
+      <view class="right"><image class='tap-mark' src='../../images/wode/tap_me.png'></image></view>
+      <view class='right'>
         <picker mode="selector" range="{{ companyCategories }}" value="{{ companyCategoryIndex }}" bindchange="companyCategoryPickerSelected">
           <text>{{ companyCategories[companyCategoryIndex] }}</text>
           <input id="category_name" name="category_name" type='text' hidden='true' value='{{ companyCategories[companyCategoryIndex] }}' />
@@ -18,15 +18,15 @@
       </view>
     </view>
     <view class='resume-row'>
-      <text class='block left label'>工作时间</text>
-      <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-      <view class='block right'>
-        <picker mode="date" value="{{ startedDate }}" start="1970.1.1" fields="month" bindchange="startedDatePickerSelected">
+      <view class="left"><text class='block label'>工作时间</text></view>
+      <view class="right"><image class='tap-mark' src='../../images/wode/tap_me.png'></image></view>
+      <view class='right'>
+        <picker mode="date" value="{{ startedDate }}" start="1970-01-01" fields="month" bindchange="startedDatePickerSelected">
           <text>{{ startedDate }}</text>
           <input id="startedDate" name="startedDate" type='text' value='{{ startedDate }}' hidden='true' />
         </picker>
         <text class='block bold left'>至</text>
-        <picker mode="date" value="{{ endedDate }}" start="1970.1.1" fields="month" bindchange="endedDatePickerSelected">
+        <picker mode="date" value="{{ endedDate }}" start="1970-01-01" fields="month" bindchange="endedDatePickerSelected">
           <text>{{ endedDate }}</text>
           <input id="endedDate" name="endedDate" type='text' value='{{ endedDate }}' hidden='true' />
         </picker>

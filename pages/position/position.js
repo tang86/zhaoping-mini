@@ -115,7 +115,7 @@ Page({
   setSelected: function (name) {
     let conditions = this.data.conditions;
     for (let key in conditions) {
-      if (key === name) {
+      if (key === name && conditions[key].isHideSub) {
         conditions[key].img = '../../images/position/ic_line_light.png';
         conditions[key].selected = 'selected';
         conditions[key].isHideSub = false;
