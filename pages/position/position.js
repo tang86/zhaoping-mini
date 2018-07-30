@@ -14,14 +14,14 @@ Page({
     positions: [],
     conditions: {
       district: {
-        img: '../../images/position/ic_pulldown.png',
+        img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
         items: {},
 
       },
       position: {
-        img: '../../images/position/ic_pulldown.png',
+        img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
         items: [
@@ -56,7 +56,7 @@ Page({
         ],
       },
       salary: {
-        img: '../../images/position/ic_pulldown.png',
+        img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
         items: [{
@@ -77,7 +77,7 @@ Page({
         ],
       },
       room: {
-        img: '../../images/position/ic_pulldown.png',
+        img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
         items: [{
@@ -116,11 +116,11 @@ Page({
     let conditions = this.data.conditions;
     for (let key in conditions) {
       if (key === name && conditions[key].isHideSub) {
-        conditions[key].img = '../../images/position/ic_line_light.png';
+        // conditions[key].img = '../../images/position/ic_line_light.png';
         conditions[key].selected = 'selected';
         conditions[key].isHideSub = false;
       } else {
-        conditions[key].img = '../../images/position/ic_pulldown.png';
+        // conditions[key].img = '../../images/position/ic_pulldown.png';
         conditions[key].selected = '';
         conditions[key].isHideSub = true;
       }

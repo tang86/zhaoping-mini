@@ -77,15 +77,15 @@ page {
   height: 90rpx;
 }
 
-.separator {
-  /* border-left: solid 1rpx #333; */
+/* .separator {
+  border-left: solid 1rpx #333;
   display: inline-block;
   background-color: #333;
   width: 2rpx;
   height: 40rpx;
   vertical-align: middle;
 
-}
+} */
 
 .selected {
   color: #43aca3 !important;
@@ -108,7 +108,8 @@ page {
 .fold image {
   display: block;
   width: 14rpx;
-  height: 7rpx;
+  height: 9rpx;
+  margin-left: 10rpx;
 }
 
 .condition-text {
@@ -116,7 +117,7 @@ page {
   text-align: center;
   height: 90rpx;
   line-height: 90rpx;
-  width: 172rpx;
+  width: 174rpx;
   font-size: 23.49rpx;
   color: #333;
 }
