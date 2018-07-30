@@ -1,48 +1,60 @@
 @import "../layout/style.wxss";
+
 .resume-block {
   margin-top: 15rpx;
 }
+
 .resume-block .resume-row {
+  width: 750rpx;
   height: 95rpx;
   line-height: 95rpx;
   background-color: #fff;
   padding-left: 24rpx;
   padding-right: 24rpx;
   box-sizing: border-box;
+  overflow: hidden;
+  clear: both;
 }
+
 .resume-block .label {
   font-size: 28rpx;
 }
 
-.resume-block .resume-row text.right {
-  font-size: 28rpx;
-  color: #888;
+.resume-block .resume-row view.left {
+  width: 200rpx;
 }
+
 .resume-block .resume-row view.right {
-  
+  text-align: right;
+  width: 500rpx;
   font-size: 28rpx;
   color: #888;
 }
-.resume-block .resume-row view.right .input{
-  margin-top: 23rpx;
+
+.input {
+  display: inline-block;
+  vertical-align: middle;
   font-size: 28rpx;
   color: #888;
   text-align: right;
 }
-.resume-block .resume-row view.right picker{
-  float: left;
+
+.resume-block .resume-row view.right picker {
+  display: inline-block;
 }
-.resume-block .resume-row view.right .bold{
+
+.resume-block .resume-row view.right .bold {
+  display: inline-block;
   margin-left: 10rpx;
   margin-right: 10rpx;
 }
+
 .resume-block .resume-row .tap-mark {
-  
   width: 12rpx;
   height: 21rpx;
-
   margin-left: 15rpx;
 }
+
 .resume-block .resume-row.under-line {
   border-bottom: solid 2rpx #eee;
 }
@@ -54,6 +66,7 @@
   color: #666;
   padding-left: 24rpx;
 }
+
 textarea {
   background-color: #fff;
   width: 100%;
