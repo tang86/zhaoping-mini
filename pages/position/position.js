@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    mask_show: false,
     data_districts: {},
     district_selected_number: 0,
     position_selected_number: 0,
@@ -24,57 +25,13 @@ Page({
         img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
-        items: [
-          {
-            id: 1,
-            name: '医疗',
-            slected: ''
-          },
-          {
-            id: 2,
-            name: '金融',
-            slected: ''
-          },
-          {
-            id: 3,
-            name: '教育',
-            slected: ''
-          }
-          ,
-          {
-            id: 4,
-            name: '科技',
-            slected: ''
-          }
-          ,
-          {
-            id: 5,
-            name: '机械',
-            slected: ''
-          }
-
-        ],
+        items: [],
       },
       salary: {
         img: '../../images/position/zw_xl.png',
         selected: '',
         isHideSub: true,
-        items: [{
-          id: 1,
-          name: '1K~3K',
-          selected: '',
-        },
-        {
-          id: 2,
-          name: '3K~5K',
-          selected: '',
-        },
-        {
-          id: 3,
-          name: '5K~10K',
-          selected: '',
-        },
-        ],
+        items: []
       },
       room: {
         img: '../../images/position/zw_xl.png',
@@ -94,8 +51,8 @@ Page({
           id: 3,
           name: '包住',
           selected: '',
-        },
-        ],
+        }
+        ]
       },
     }
 
@@ -114,11 +71,13 @@ Page({
   },
   setSelected: function (name) {
     let conditions = this.data.conditions;
+    let mask_show = false;
     for (let key in conditions) {
       if (key === name && conditions[key].isHideSub) {
         // conditions[key].img = '../../images/position/ic_line_light.png';
         conditions[key].selected = 'selected';
         conditions[key].isHideSub = false;
+        mask_show = true;
       } else {
         // conditions[key].img = '../../images/position/ic_pulldown.png';
         conditions[key].selected = '';
@@ -127,7 +86,8 @@ Page({
 
     }
     this.setData({
-      conditions: conditions
+      conditions: conditions,
+      mask_show: mask_show
     });
 
   },
@@ -243,7 +203,7 @@ Page({
 
     this.setData({
       position_selected_number: position_selected_number,
-      conditions: conditions,
+      conditions: conditions
     });
   },
   search: function (option) {
@@ -254,7 +214,8 @@ Page({
       conditions[key].isHideSub = true;
     }
     this.setData({
-      conditions: conditions
+      conditions: conditions,
+      mask_show: false
     });
     this.getPositions(1, condition);
     setTimeout(function () {
@@ -275,7 +236,8 @@ Page({
         that.setData({
           data_districts: res.data.data,
           current_sub_districts: res.data.data.cities[1],
-          conditions: conditions
+          conditions: conditions,
+          mask_show: false
         });
       }
     });
@@ -411,7 +373,8 @@ Page({
         conditions.position.items = res.data.data.company_categories;
         conditions.salary.items = res.data.data.salaries;
         that.setData({
-          conditions: conditions
+          conditions: conditions,
+          mask_show: false
         });
       }
     });
@@ -451,7 +414,6 @@ Page({
     return selectedConditions;
   },
   getSelectedIds: function (obj) {
-
     let ids = [];
     for (let key in obj) {
 
@@ -466,14 +428,14 @@ Page({
   initConditions: function () {
     let conditions = this.data.conditions;
     for (let key in conditions) {
-
-      conditions[key].img = '../../images/position/ic_pulldown.png';
+      // conditions[key].img = '../../images/position/ic_pulldown.png';
       conditions[key].selected = '';
       conditions[key].isHideSub = true;
 
     }
     this.setData({
-      conditions: conditions
+      conditions: conditions,
+      mask_show: false
     });
   }
 })

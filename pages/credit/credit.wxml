@@ -58,9 +58,9 @@
 <view class='resume-block' wx:if="{{ isShowCredit }}">
   <block wx:for="{{ pointsLogs }}" wx:key="key">
     <view class='resume-row ceil-line'>
-      <text class='block th'>{{ item.created_at }}</text>
-      <text class='block th'>{{ item.remark }}</text>
-      <text class='block td'>{{ item.points }}积分</text>
+      <view class='block th'>{{ item.created_at }}</view>
+      <view class='block th'>{{ item.remark }}</view>
+      <view class='block td'>{{ item.points }}积分</view>
     </view>
   </block>
 </view>

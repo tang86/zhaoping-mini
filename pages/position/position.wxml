@@ -123,3 +123,6 @@
 
     </view>
   </block>
+
+
+  <view class='wx-mask' wx:if="{{ mask_show }}"></view>
