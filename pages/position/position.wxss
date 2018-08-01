@@ -11,6 +11,7 @@ page {
   border-top: solid 2rpx #eee;
   border-bottom: solid 2rpx #eee;
   position: relative;
+  z-index: 20;
 }
 
 .conditions .sub-conditions {
@@ -178,3 +179,16 @@ page {
   padding: 9rpx 17rpx;
   margin-right: 24rpx;
 }
+
+
+/* 遮照层 开始 */
+.wx-mask{
+  position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+/* 遮照层 结束 */
