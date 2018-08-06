@@ -17,7 +17,7 @@
     <image class='icon left' src='../../images/wode/ic_resume.png'></image>
     <text class='block left label'>我的简历</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
-    <text class='block right'>完善简历+50积分，只需1分钟</text>
+    <text class='block right' wx:if="{{!resume.is_complete }}">完善简历+50积分，只需1分钟</text>
   </view>
   <view class='resume-row ceil-line' bindtap='toSent'>
     <image class='icon left' src='../../images/wode/ic_delivery.png'></image>

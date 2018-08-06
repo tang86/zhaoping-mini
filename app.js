@@ -1,6 +1,6 @@
 //app.js
- //const host = 'http://localhost:8000/api';
-const host = 'https://www.quyupin.com/api';
+ const host = 'http://localhost:8000/api';
+//const host = 'https://www.quyupin.com/api';
 App({
   onLaunch: function (option) {
 

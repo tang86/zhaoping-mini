@@ -29,6 +29,7 @@ Page({
       success: function (res) {
         if (res.statusCode === 200) {
           getApp().globalData.resume.name = data.name;
+          getApp().globalData.resume.is_complete = data.is_complete;
           console.log(getApp().globalData.resume);
           wx.navigateBack()
         } else if (res.statusCode === 422) {

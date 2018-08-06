@@ -205,7 +205,7 @@ Page({
           This.setData({
             resume: resume
           });
-          //getApp().globalData.resume.gender = gender;
+          getApp().globalData.resume = resume;
 
 
         } else if (res.statusCode === 422) {
@@ -252,7 +252,7 @@ Page({
           This.setData({
             resume: resume
           });
-          getApp().globalData.resume.age = age;
+          getApp().globalData.resume = resume;
 
 
         } else if (res.statusCode === 422) {
@@ -299,7 +299,7 @@ Page({
           This.setData({
             resume: resume
           });
-          getApp().globalData.resume.city = city;
+          getApp().globalData.resume = resume;
 
 
         } else if (res.statusCode === 422) {
@@ -346,7 +346,7 @@ Page({
           This.setData({
             resume: resume
           });
-          getApp().globalData.resume.intentions_name = intentionsName;
+          getApp().globalData.resume = resume;
 
 
         } else if (res.statusCode === 422) {
@@ -395,8 +395,8 @@ Page({
             resume: resume,
             statusIndex: status
           });
-          console.log(getApp().globalData.resume);
-          getApp().globalData.resume.status = status;
+      
+          getApp().globalData.resume = resume;
 
 
         } else if (res.statusCode === 422) {
@@ -443,8 +443,8 @@ Page({
           This.setData({
             resume: resume
           });
-          getApp().globalData.resume.worked_date = workedDate;
-          console.log(resume);
+          getApp().globalData.resume = resume;
+          
 
         } else if (res.statusCode === 422) {
           var obj = res.data

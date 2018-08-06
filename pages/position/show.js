@@ -90,9 +90,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (option) {
+    if (JSON.stringify(option) != '{}') {
+      
+      if (option.hasOwnProperty('inviter_id')) {
+        getApp().globalData.inviter_id = option.inviter_id;
+      }
+
+    }
     // 拿到guid
     let This = this;
-    This.hasResume();
+   
     This.setData({
       guid: option.guid
     });
@@ -137,7 +144,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.hasResume();
   },
 
   /**
@@ -179,11 +186,11 @@ Page({
     }
     return {
       title: '区域聘小程序',
-      path: '/pages/position/show',
+      path: '/pages/position/show?inviter_id=' + getApp().globalData.userInfo.id,
       imageUrl: '/images/position_share.png',
       success: function (res) {
         // 转发成功
-        console.log("转发成功:" + JSON.stringify(res));
+        
         //加积分
         that.increasePointsShare();
 
@@ -207,10 +214,16 @@ Page({
       success: function (res) {
         if (res.statusCode === 200) {
           let hasResume = This.data.hasResume;
+          console.log(res.data.data);
           if (res.data.data.status == 0) {
             hasResume = false;
           } else {
-            hasResume = true;
+            if (res.data.data.is_complete) {
+              hasResume = true;
+            } else {
+              hasResume = false;
+            }
+            
           }
           This.setData({
             hasResume: hasResume
