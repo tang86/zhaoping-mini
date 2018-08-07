@@ -147,6 +147,23 @@ Page({
       current_sub_districts: current_sub_districts,
     });
   },
+  resetSecondPositionOption: function (option) {
+
+    let conditions = this.data.conditions;
+
+    let current_sub_positions = conditions.position.items;
+    for (let key in current_sub_positions) {
+      current_sub_positions[key].selected = '';
+    }
+
+    conditions.position.items = current_sub_positions;
+
+    this.setData({
+      position_selected_number: 0,
+      current_sub_positions: current_sub_positions,
+      conditions: conditions
+    });
+  },
   selectSecondOption: function (option) {
     let district_selected_number = this.data.district_selected_number;
     let condition = option.currentTarget.dataset.type;

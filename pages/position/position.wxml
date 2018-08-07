@@ -72,7 +72,7 @@
       <!-- 第一层 结束  -->
 
       <view class='district-buttons' hidden='{{ conditions.position.isHideSub }}'>
-        <view class='district-reset' bindtap='resetSecondOption'>
+        <view class='district-reset' bindtap='resetSecondPositionOption'>
           <text>重置条件</text>
         </view>
         <view class='district-confirm' bindtap='search' data-type="position">

@@ -2,7 +2,7 @@
   <view class='position-name left'>
     <text class='block name'>{{ name }}</text>
     <image class='ic-map left' src='../../images/position/ic_map.png'></image>
-    <text class='company-district left'>北京·大兴·马驹桥</text>
+    <text class='company-district left'>{{ district.full_name }}</text>
   </view>
 
   <view class='position-company right'>

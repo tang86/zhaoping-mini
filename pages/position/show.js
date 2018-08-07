@@ -129,6 +129,7 @@ Page({
         res.data.data.content = getApp().convertHtmlToText(res.data.data.content);
         res.data.data.benefit = getApp().convertHtmlToText(res.data.data.benefit);
         This.setData(res.data.data);
+        console.log(res.data.data);
       }
     });
   },
