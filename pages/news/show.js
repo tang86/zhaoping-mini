@@ -120,7 +120,7 @@ Page({
 
     return {
       title: '区域聘小程序',
-      path: '/pages/news/show?inviter_id=' + getApp().globalData.userInfo.id,
+      path: '/pages/news/show?guid='+that.data.guid+'&inviter_id=' + getApp().globalData.userInfo.id,
       imageUrl: '/images/news_share.png',
       success: function (res) {
         // 转发成功

@@ -187,7 +187,7 @@ Page({
     }
     return {
       title: '区域聘小程序',
-      path: '/pages/position/show?inviter_id=' + getApp().globalData.userInfo.id,
+      path: '/pages/position/show?guid=' + that.data.guid +'&inviter_id=' + getApp().globalData.userInfo.id,
       imageUrl: '/images/position_share.png',
       success: function (res) {
         // 转发成功
