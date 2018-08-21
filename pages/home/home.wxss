@@ -100,6 +100,9 @@ swiper image {
   margin-top: 30rpx;
   font-size: 34rpx;
   line-height: auto;
+  overflow: hidden; /*隐藏溢出的文本 */
+  white-space:nowrap; /*不换行 */
+  text-overflow: ellipsis;
   color: #333;
 }
 .news-content {

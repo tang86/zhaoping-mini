@@ -5,7 +5,7 @@ page{
   padding-right: 24rpx;
 }
 .show-title {
-  height: 85rpx;
+  height: auto;
   margin-top: 48rpx;
   font-size: 42rpx;
   /* font-weight: bold; */
