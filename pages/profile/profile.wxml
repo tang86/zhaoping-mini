@@ -71,7 +71,7 @@
     <text class='block left label'>参加工作时间</text>
     <image class='tap-mark right' src='../../images/wode/tap_me.png'></image>
     <view class='block right'>
-      <picker mode="date" value="{{ workedDate }}" start="1970.1.1" fields="month" bindchange="workedDatePickerSelected">
+      <picker mode="date" value="{{ workedDate }}" start="1998-08" fields="month" bindchange="workedDatePickerSelected">
         <text>{{ resume.worked_date ? resume.worked_date :'请选择' }}</text>
       </picker>
     </view>
